@@ -615,7 +615,7 @@
         <div style="display:inline-block; background:#1a1815; color:#fff; font-family:'Bitter',serif; font-weight:700; font-size:14px; letter-spacing:0.5px; text-transform:uppercase; padding:6px 16px; border-radius:6px; margin-bottom:14px;">{{ cat.title }}</div>
         <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="3">
           <div style="background:#fff; border:1px solid rgba(32,29,25,0.1); border-radius:14px; padding:14px; margin-bottom:12px; display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
-            <image-slot id="{{ item.imgId }}" shape="rounded" radius="10" style="width:72px; height:72px; flex-shrink:0;" placeholder="{{ item.name }}"></image-slot>
+            <image-slot id="{{ item.imgId }}" src="{{ item.img }}" shape="rounded" radius="10" style="width:72px; height:72px; flex-shrink:0;" placeholder="{{ item.name }}"></image-slot>
             <div style="flex:1; min-width:180px;">
               <div style="font-size:16px; font-weight:700; margin-bottom:3px;">{{ item.name }}</div>
               <div style="font-size:13px; line-height:1.5; color:rgba(32,29,25,0.6);">{{ item.desc }}</div>
@@ -939,43 +939,42 @@ const SALAD_PL = 'świeża sałatka (pomidor, cebula, sałata lodowa), słodki s
 const SALAD_EN = 'fresh salad (tomato, onion, iceberg lettuce), oven-baked sweet garlic sauce, spicy sambal pepper sauce';
 const MENU_DATA = [
   { key: 'combo', pl: 'Zestaw', en: 'Combo', items: [
-    { id: 'combo-beef-cheese', pl: 'Zestaw Wołowina z Serem + Frytki + Napój', en: 'Beef & Cheese Combo + Fries + Drink', descPl: `100% kraft wołowina z serem, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft beef with cheese, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 39.99 },
-    { id: 'combo-beef-jalapeno', pl: 'Zestaw Wołowina z Jalapeño + Frytki + Napój', en: 'Beef & Jalapeño Combo + Fries + Drink', descPl: `100% kraft wołowina z jalapeño, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft beef with jalapeño, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 39.99 },
-    { id: 'combo-lawasz-beef', pl: 'Zestaw Lawasz Wołowina + Frytki + Napój', en: 'Beef Lavash Combo + Fries + Drink', descPl: `100% kraft wołowina, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft beef, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 38.99 },
-    { id: 'combo-lawasz-chicken', pl: 'Zestaw Lawasz Kurczak + Frytki + Napój', en: 'Chicken Lavash Combo + Fries + Drink', descPl: `100% kraft kurczak, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft chicken, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 35.99 },
-    { id: 'combo-lawasz-chicken-cheese', pl: 'Zestaw Lawasz Kurczak z Serem + Frytki + Napój', en: 'Chicken & Cheese Lavash Combo + Fries + Drink', descPl: `100% kraft kurczak z serem, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft chicken with cheese, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 37.99 },
-    { id: 'combo-lawasz-chicken-jalapeno', pl: 'Zestaw Lawasz Kurczak z Jalapeño + Frytki + Napój', en: 'Chicken & Jalapeño Lavash Combo + Fries + Drink', descPl: `100% kraft kurczak z jalapeño, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft chicken with jalapeño, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 37.99 },
-    { id: 'combo-bulka', pl: 'Zestaw W Bułce + Frytki + Napój', en: 'Bun Combo + Fries + Drink', descPl: `100% kraft mięso, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft meat, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 36.99 },
+    { id: 'combo-beef-cheese', img: 'assets/images/zestaw-wolowina-serem.jpg', pl: 'Zestaw Wołowina z Serem + Frytki + Napój', en: 'Beef & Cheese Combo + Fries + Drink', descPl: `100% kraft wołowina z serem, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft beef with cheese, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 39.99 },
+    { id: 'combo-beef-jalapeno', img: 'assets/images/zestaw-wolowina-jalapeno.jpg', pl: 'Zestaw Wołowina z Jalapeño + Frytki + Napój', en: 'Beef & Jalapeño Combo + Fries + Drink', descPl: `100% kraft wołowina z jalapeño, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft beef with jalapeño, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 39.99 },
+    { id: 'combo-lawasz-beef', img: 'assets/images/zestaw-lawasz-wolowina.jpg', pl: 'Zestaw Lawasz Wołowina + Frytki + Napój', en: 'Beef Lavash Combo + Fries + Drink', descPl: `100% kraft wołowina, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft beef, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 38.99 },
+    { id: 'combo-lawasz-chicken', img: 'assets/images/zestaw-lawasz-kurczak.png', pl: 'Zestaw Lawasz Kurczak + Frytki + Napój', en: 'Chicken Lavash Combo + Fries + Drink', descPl: `100% kraft kurczak, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft chicken, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 35.99 },
+    { id: 'combo-lawasz-chicken-cheese', img: 'assets/images/zestaw-lawasz-kurczak-serem.jpg', pl: 'Zestaw Lawasz Kurczak z Serem + Frytki + Napój', en: 'Chicken & Cheese Lavash Combo + Fries + Drink', descPl: `100% kraft kurczak z serem, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft chicken with cheese, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 37.99 },
+    { id: 'combo-lawasz-chicken-jalapeno', img: 'assets/images/zestaw-lawasz-kurczak-jalapeno.jpg', pl: 'Zestaw Lawasz Kurczak z Jalapeño + Frytki + Napój', en: 'Chicken & Jalapeño Lavash Combo + Fries + Drink', descPl: `100% kraft kurczak z jalapeño, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft chicken with jalapeño, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 37.99 },
+    { id: 'combo-bulka', img: 'assets/images/zestaw-w-bulce.jpg', pl: 'Zestaw W Bułce + Frytki + Napój', en: 'Bun Combo + Fries + Drink', descPl: `100% kraft mięso, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft meat, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 36.99 },
   ]},
   { key: 'kebab', pl: 'Kebab', en: 'Kebab', items: [
-    { id: 'lawasz-beef', pl: 'Lawasz Wołowina', en: 'Beef Lavash', descPl: `100% kraft wołowina, ${SALAD_PL}.`, descEn: `100% craft beef, ${SALAD_EN}.`, price: 28.99 },
-    { id: 'lawasz-beef-cheese', pl: 'Lawasz Wołowina z Serem', en: 'Beef & Cheese Lavash', descPl: `100% kraft wołowina z serem, ${SALAD_PL}.`, descEn: `100% craft beef with cheese, ${SALAD_EN}.`, price: 29.99 },
-    { id: 'lawasz-beef-jalapeno', pl: 'Lawasz Wołowina z Jalapeño', en: 'Beef & Jalapeño Lavash', descPl: `100% kraft wołowina z jalapeño, ${SALAD_PL}.`, descEn: `100% craft beef with jalapeño, ${SALAD_EN}.`, price: 29.99 },
-    { id: 'lawasz-chicken', pl: 'Lawasz Kurczak', en: 'Chicken Lavash', descPl: `100% kraft kurczak, ${SALAD_PL}.`, descEn: `100% craft chicken, ${SALAD_EN}.`, price: 26.99 },
-    { id: 'lawasz-chicken-cheese', pl: 'Lawasz Kurczak z Serem', en: 'Chicken & Cheese Lavash', descPl: `100% kraft kurczak z serem, ${SALAD_PL}.`, descEn: `100% craft chicken with cheese, ${SALAD_EN}.`, price: 27.99 },
-    { id: 'lawasz-chicken-jalapeno', pl: 'Lawasz Kurczak z Jalapeño', en: 'Chicken & Jalapeño Lavash', descPl: `100% kraft kurczak z jalapeño, ${SALAD_PL}.`, descEn: `100% craft chicken with jalapeño, ${SALAD_EN}.`, price: 27.99 },
-    { id: 'bulka-kebab', pl: 'W Bułce Kebab', en: 'Bun Kebab', descPl: `100% kraft mięso, ${SALAD_PL}.`, descEn: `100% craft meat, ${SALAD_EN}.`, price: 26.99 },
-    { id: 'bulka-kebab-cheese', pl: 'W Bułce Kebab z Serem', en: 'Bun Kebab with Cheese', descPl: `100% kraft mięso z serem, ${SALAD_PL}.`, descEn: `100% craft meat with cheese, ${SALAD_EN}.`, price: 28.99 },
-    { id: 'bulka-kebab-jalapeno', pl: 'W Bułce Kebab z Jalapeño', en: 'Bun Kebab with Jalapeño', descPl: `100% kraft mięso z jalapeño, ${SALAD_PL}.`, descEn: `100% craft meat with jalapeño, ${SALAD_EN}.`, price: 28.99 },
+    { id: 'lawasz-beef', img: 'assets/images/lawasz-wolowina.jpg', pl: 'Lawasz Wołowina', en: 'Beef Lavash', descPl: `100% kraft wołowina, ${SALAD_PL}.`, descEn: `100% craft beef, ${SALAD_EN}.`, price: 28.99 },
+    { id: 'lawasz-beef-cheese', img: 'assets/images/lawasz-wolowina-serem.jpg', pl: 'Lawasz Wołowina z Serem', en: 'Beef & Cheese Lavash', descPl: `100% kraft wołowina z serem, ${SALAD_PL}.`, descEn: `100% craft beef with cheese, ${SALAD_EN}.`, price: 29.99 },
+    { id: 'lawasz-beef-jalapeno', img: 'assets/images/lawasz-wolowina-jalapeno.jpg', pl: 'Lawasz Wołowina z Jalapeño', en: 'Beef & Jalapeño Lavash', descPl: `100% kraft wołowina z jalapeño, ${SALAD_PL}.`, descEn: `100% craft beef with jalapeño, ${SALAD_EN}.`, price: 29.99 },
+    { id: 'lawasz-chicken', img: 'assets/images/lawasz-kurczak.jpg', pl: 'Lawasz Kurczak', en: 'Chicken Lavash', descPl: `100% kraft kurczak, ${SALAD_PL}.`, descEn: `100% craft chicken, ${SALAD_EN}.`, price: 26.99 },
+    { id: 'lawasz-chicken-cheese', img: 'assets/images/lawasz-kurczak-serem.jpg', pl: 'Lawasz Kurczak z Serem', en: 'Chicken & Cheese Lavash', descPl: `100% kraft kurczak z serem, ${SALAD_PL}.`, descEn: `100% craft chicken with cheese, ${SALAD_EN}.`, price: 27.99 },
+    { id: 'lawasz-chicken-jalapeno', img: 'assets/images/lawasz-kurczak-jalapeno.jpg', pl: 'Lawasz Kurczak z Jalapeño', en: 'Chicken & Jalapeño Lavash', descPl: `100% kraft kurczak z jalapeño, ${SALAD_PL}.`, descEn: `100% craft chicken with jalapeño, ${SALAD_EN}.`, price: 27.99 },
+    { id: 'bulka-kebab', img: 'assets/images/bulce-kebab.jpg', pl: 'W Bułce Kebab', en: 'Bun Kebab', descPl: `100% kraft mięso, ${SALAD_PL}.`, descEn: `100% craft meat, ${SALAD_EN}.`, price: 26.99 },
+    { id: 'bulka-kebab-cheese', img: 'assets/images/bulce-serem.jpg', pl: 'W Bułce Kebab z Serem', en: 'Bun Kebab with Cheese', descPl: `100% kraft mięso z serem, ${SALAD_PL}.`, descEn: `100% craft meat with cheese, ${SALAD_EN}.`, price: 28.99 },
+    { id: 'bulka-kebab-jalapeno', img: 'assets/images/bulce-jalapeno.jpg', pl: 'W Bułce Kebab z Jalapeño', en: 'Bun Kebab with Jalapeño', descPl: `100% kraft mięso z jalapeño, ${SALAD_PL}.`, descEn: `100% craft meat with jalapeño, ${SALAD_EN}.`, price: 28.99 },
   ]},
   { key: 'plate', pl: 'Talerz i Box', en: 'Plate & Box', items: [
-    { id: 'talerz-beef', pl: 'Talerz Wołowiny', en: 'Beef Plate', descPl: `100% kraft wołowina, ${SALAD_PL}, frytki i napój do wyboru.`, descEn: `100% craft beef, ${SALAD_EN}, fries and a drink of choice.`, price: 29.99 },
-    { id: 'talerz-chicken', pl: 'Talerz Kurczak', en: 'Chicken Plate', descPl: `100% kraft kurczak, ${SALAD_PL}, frytki i napój do wyboru.`, descEn: `100% craft chicken, ${SALAD_EN}, fries and a drink of choice.`, price: 27.99 },
-    { id: 'talerz-mixed', pl: 'Talerz Mieszany', en: 'Mixed Plate', descPl: `100% kraft mieszane mięso, ${SALAD_PL}, frytki i napój do wyboru.`, descEn: `100% craft mixed meat, ${SALAD_EN}, fries and a drink of choice.`, price: 28.99 },
-    { id: 'box-beef', pl: 'Box Wołowina 150g', en: 'Beef Box 150g', descPl: `100% kraft wołowina, ${SALAD_PL}, frytki i napój do wyboru.`, descEn: `100% craft beef, ${SALAD_EN}, fries and a drink of choice.`, price: 28.99 },
+    { id: 'talerz-beef', img: 'assets/images/talerz-wolowiny.jpg', pl: 'Talerz Wołowiny', en: 'Beef Plate', descPl: `100% kraft wołowina, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft beef, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 29.99 },
+    { id: 'talerz-chicken', img: 'assets/images/talerz-kurczak.jpg', pl: 'Talerz Kurczak', en: 'Chicken Plate', descPl: `100% kraft kurczak, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft chicken, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 27.99 },
+    { id: 'talerz-mixed', img: 'assets/images/talerz-mieszany.jpg', pl: 'Talerz Mieszany', en: 'Mixed Plate', descPl: `100% kraft mieszane mięso, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft mixed meat, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 28.99 },
+    { id: 'box-beef', img: 'assets/images/box-wolowina.jpg', pl: 'Box Wołowina 150g', en: 'Beef Box 150g', descPl: `100% kraft wołowina, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft beef, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 28.99 },
+    { id: 'box-chicken', img: 'assets/images/box-kurczak.jpg', pl: 'Box Kurczak 150g', en: 'Chicken Box 150g', descPl: `100% kraft kurczak, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft chicken, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 26.99 },
+    { id: 'box-mixed', img: 'assets/images/box-mieszany.jpg', pl: 'Box Mieszany Mięso 150g', en: 'Mixed Meat Box 150g', descPl: `100% kraft mieszane mięso, ${SALAD_PL}, frytki o smaku specjalnych przypraw i napój do wyboru.`, descEn: `100% craft mixed meat, ${SALAD_EN}, specially seasoned fries and a drink of choice.`, price: 27.99 },
   ]},
   { key: 'fries', pl: 'Extra Frytki', en: 'Extra Fries', items: [
-    { id: 'fries-small', pl: 'Frytki małe', en: 'Small Fries', descPl: 'Chrupiące frytki z przyprawami.', descEn: 'Crispy seasoned fries.', price: 9 },
-    { id: 'fries-large', pl: 'Frytki duże', en: 'Large Fries', descPl: 'Chrupiące frytki z przyprawami, większa porcja.', descEn: 'Crispy seasoned fries, bigger portion.', price: 12 },
+    { id: 'fries', img: 'assets/images/frytki.jpg', pl: 'Frytki 250g', en: 'Fries 250g', descPl: 'Frytki ze specjalnymi przyprawami.', descEn: 'Fries with special seasoning.', price: 11.99 },
   ]},
   { key: 'drinks', pl: 'Napój', en: 'Drink', items: [
-    { id: 'ayran', pl: 'Ayran', en: 'Ayran', descPl: 'Tradycyjny turecki napój jogurtowy.', descEn: 'Traditional Turkish yogurt drink.', price: 7 },
-    { id: 'ayran-sparkling', pl: 'Ayran gazowany', en: 'Sparkling Ayran', descPl: 'Musujący napój jogurtowy.', descEn: 'Sparkling yogurt drink.', price: 8 },
-    { id: 'cola', pl: 'Coca-Cola 0,33 l', en: 'Coca-Cola 0.33 l', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 7 },
-    { id: 'cola-zero', pl: 'Coca-Cola Zero 0,33 l', en: 'Coca-Cola Zero 0.33 l', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 7 },
-    { id: 'fanta', pl: 'Fanta 0,33 l', en: 'Fanta 0.33 l', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 7 },
-    { id: 'sprite', pl: 'Sprite 0,33 l', en: 'Sprite 0.33 l', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 7 },
-    { id: 'water', pl: 'Woda niegazowana 0,5 l', en: 'Still Water 0.5 l', descPl: 'Butelka 500 ml.', descEn: '500 ml bottle.', price: 5 },
+    { id: 'ayran', img: 'assets/images/ayran.jpg', pl: 'Ayran', en: 'Ayran', descPl: 'Tradycyjny turecki napój jogurtowy. 250 ml.', descEn: 'Traditional Turkish yogurt drink. 250 ml.', price: 7 },
+    { id: 'cola', img: 'assets/images/cola.jpg', pl: 'Cola Klasyczna', en: 'Cola', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 8 },
+    { id: 'cola-zero', img: 'assets/images/cola-zero.jpg', pl: 'Cola Zero', en: 'Cola Zero', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 8 },
+    { id: 'fanta', pl: 'Fanta Pomarańczowa', en: 'Orange Fanta', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 8 },
+    { id: 'sprite', img: 'assets/images/sprite.jpg', pl: 'Sprite', en: 'Sprite', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 8 },
   ]},
 ];
 
@@ -1018,7 +1017,7 @@ class Component extends DCLogic {
       items: cat.items.map(it => {
         const name = isPl ? it.pl : it.en;
         const desc = isPl ? it.descPl : it.descEn;
-        return { id: it.id, imgId: 'menu-' + it.id, name, desc, price: it.price, add: () => this.addToCart({ id: it.id, name, price: it.price }) };
+        return { id: it.id, imgId: 'menu-' + it.id, img: it.img || '', name, desc, price: it.price, add: () => this.addToCart({ id: it.id, name, price: it.price }) };
       }),
     }));
 
