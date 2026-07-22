@@ -405,6 +405,17 @@
     a:hover { color: #c1362b; }
     ::selection { background: #c1362b; color: #fff; }
     input::placeholder { color: rgba(32,29,25,0.4); }
+    header nav { min-width: 0; }
+    @media (max-width: 680px) {
+      header nav { gap: 10px; }
+      header .nav-secondary { display: none; }
+      header .nav-secondary-label { display: none; }
+      header nav button { padding-left: 10px !important; padding-right: 10px !important; }
+    }
+    @media (max-width: 400px) {
+      header { padding-left: 16px !important; padding-right: 16px !important; }
+      header > div > div { display: none; }
+    }
   </style>
 </helmet>
 
@@ -421,13 +432,13 @@
     </div>
     <nav style="display:flex; align-items:center; gap:22px; font-size:15px; font-weight:600;">
       <a href="#" sc-camel-on-click="{{ goMenu }}" style="color:#201d19;">{{ t.navMenu }}</a>
-      <a href="#o-nas" sc-camel-on-click="{{ goHome }}" style="color:#201d19;">{{ t.navAbout }}</a>
-      <a href="#lokalizacja" sc-camel-on-click="{{ goHome }}" style="color:#201d19;">{{ t.navLocation }}</a>
-      <a href="#" sc-camel-on-click="{{ goContact }}" style="color:#201d19;">{{ t.navContact }}</a>
-      <a href="#" sc-camel-on-click="{{ goPromo }}" style="color:#c1362b;">{{ t.navPromo }}</a>
+      <a href="#o-nas" sc-camel-on-click="{{ goHomeAbout }}" class="nav-secondary" style="color:#201d19;">{{ t.navAbout }}</a>
+      <a href="#lokalizacja" sc-camel-on-click="{{ goHomeLocation }}" class="nav-secondary" style="color:#201d19;">{{ t.navLocation }}</a>
+      <a href="#" sc-camel-on-click="{{ goContact }}" class="nav-secondary" style="color:#201d19;">{{ t.navContact }}</a>
+      <a href="#" sc-camel-on-click="{{ goPromo }}" class="nav-secondary" style="color:#c1362b;">{{ t.navPromo }}</a>
       <div style="position:relative;">
         <button sc-camel-on-click="{{ toggleLangMenu }}" style="display:flex; align-items:center; gap:6px; border:1.5px solid rgba(32,29,25,0.25); background:transparent; padding:8px 14px; border-radius:100px; font-weight:700; font-size:13px; cursor:pointer; color:#201d19;" style-hover="border-color:#1c6b3f; color:#1c6b3f;">
-          <img src="https://flagcdn.com/24x18/{{ currentLangFlag }}.png" alt="{{ currentLangLabel }}" style="width:20px; height:15px; border-radius:2px; display:block; object-fit:cover;"><span>{{ currentLangLabel }}</span><span style="font-size:10px;">▾</span>
+          <img src="https://flagcdn.com/24x18/{{ currentLangFlag }}.png" alt="{{ currentLangLabel }}" style="width:20px; height:15px; border-radius:2px; display:block; object-fit:cover;"><span class="nav-secondary-label">{{ currentLangLabel }}</span><span style="font-size:10px;">▾</span>
         </button>
         <sc-if value="{{ langMenuOpen }}">
           <div style="position:absolute; top:calc(100% + 8px); right:0; background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,0.14); padding:6px; display:flex; flex-direction:column; min-width:150px; z-index:60;">
@@ -446,7 +457,7 @@
           <span style="position:absolute; bottom:2px; left:6px; width:1.5px; height:5px; background:#161412;"></span>
           <span style="position:absolute; bottom:2px; left:11px; width:1.5px; height:5px; background:#161412;"></span>
         </span>
-        {{ t.cartTitle }}
+        <span class="nav-secondary-label">{{ t.cartTitle }}</span>
         <sc-if value="{{ hasCartItems }}">
           <span style="background:#c1362b; color:#fff; border-radius:100px; min-width:20px; height:20px; display:inline-flex; align-items:center; justify-content:center; font-size:12px; padding:0 5px;">{{ cartCount }}</span>
         </sc-if>
@@ -624,19 +635,24 @@
           <div style="font-size:13px; line-height:1.5; color:rgba(32,29,25,0.55); margin-bottom:14px; max-width:640px;">{{ cat.note }}</div>
         </sc-if>
         <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="3">
-          <div style="background:#fff; border:1px solid rgba(32,29,25,0.1); border-radius:14px; padding:14px; margin-bottom:12px; display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
-            <image-slot id="{{ item.imgId }}" src="{{ item.img }}" shape="rounded" radius="10" style="width:{{ item.imgSize }}px; height:{{ item.imgSize }}px; flex-shrink:0;" placeholder="{{ item.name }}"></image-slot>
+          <div style="background:#fff; border:1px solid rgba(32,29,25,0.1); border-radius:14px; padding:14px; margin-bottom:12px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; opacity:{{ item.rowOpacity }};">
+            <image-slot id="{{ item.imgId }}" src="{{ item.img }}" shape="rounded" radius="10" style="width:{{ item.imgSize }}px; height:{{ item.imgSize }}px; flex-shrink:0; filter:{{ item.imgFilter }};" placeholder="{{ item.name }}"></image-slot>
             <div style="flex:1; min-width:180px;">
               <sc-if value="{{ item.badge }}">
-                <div style="display:inline-block; background:#c1362b; color:#fff; font-size:11px; font-weight:800; letter-spacing:0.3px; text-transform:uppercase; padding:3px 9px; border-radius:100px; margin-bottom:6px;">{{ item.badge }}</div>
+                <div style="display:inline-block; background:{{ item.badgeColor }}; color:#fff; font-size:11px; font-weight:800; letter-spacing:0.3px; text-transform:uppercase; padding:3px 9px; border-radius:100px; margin-bottom:6px;">{{ item.badge }}</div>
               </sc-if>
               <div style="font-size:16px; font-weight:700; margin-bottom:3px;">{{ item.name }}</div>
               <div style="font-size:13px; line-height:1.5; color:rgba(32,29,25,0.6);">{{ item.desc }}</div>
             </div>
-            <button sc-camel-on-click="{{ item.add }}" aria-label="{{ item.addLabel }}" style="background:#faf1e4; border:1.5px solid transparent; padding:10px 14px 10px 20px; border-radius:10px; cursor:pointer; flex-shrink:0; display:flex; align-items:center; gap:10px;" style-hover="border-color:#1c6b3f; background:#eef4ef;">
-              <span style="font-family:'Bitter',serif; font-weight:800; font-size:16px; color:#1c6b3f; white-space:nowrap;">{{ item.price }} zł</span>
-              <span style="width:22px; height:22px; border-radius:50%; background:#1c6b3f; color:#fff; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center; line-height:1;">+</span>
-            </button>
+            <sc-if value="{{ item.available }}">
+              <button sc-camel-on-click="{{ item.add }}" aria-label="{{ item.addLabel }}" style="background:#faf1e4; border:1.5px solid transparent; padding:10px 14px 10px 20px; border-radius:10px; cursor:pointer; flex-shrink:0; display:flex; align-items:center; gap:10px;" style-hover="border-color:#1c6b3f; background:#eef4ef;">
+                <span style="font-family:'Bitter',serif; font-weight:800; font-size:16px; color:#1c6b3f; white-space:nowrap;">{{ item.price }} zł</span>
+                <span style="width:22px; height:22px; border-radius:50%; background:#1c6b3f; color:#fff; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center; line-height:1;">+</span>
+              </button>
+            </sc-if>
+            <sc-if value="{{ item.soldOut }}">
+              <div style="background:rgba(32,29,25,0.08); color:rgba(32,29,25,0.5); padding:10px 18px; border-radius:10px; font-weight:800; font-size:13px; text-transform:uppercase; letter-spacing:0.3px; flex-shrink:0; white-space:nowrap;">{{ t.soldOutLabel }}</div>
+            </sc-if>
           </div>
         </sc-for>
       </div>
@@ -725,8 +741,8 @@
       </div>
       <nav style="display:flex; align-items:center; gap:20px; font-size:14px; font-weight:600; flex-wrap:wrap;">
         <a href="#" sc-camel-on-click="{{ goMenu }}" style="color:#201d19;">{{ t.navMenu }}</a>
-        <a href="#o-nas" sc-camel-on-click="{{ goHome }}" style="color:#201d19;">{{ t.navAbout }}</a>
-        <a href="#lokalizacja" sc-camel-on-click="{{ goHome }}" style="color:#201d19;">{{ t.navLocation }}</a>
+        <a href="#o-nas" sc-camel-on-click="{{ goHomeAbout }}" style="color:#201d19;">{{ t.navAbout }}</a>
+        <a href="#lokalizacja" sc-camel-on-click="{{ goHomeLocation }}" style="color:#201d19;">{{ t.navLocation }}</a>
         <a href="#" sc-camel-on-click="{{ goContact }}" style="color:#201d19;">{{ t.navContact }}</a>
       </nav>
     </div>
@@ -857,6 +873,7 @@ const CONTENT = {
     tagline: '100% Kraftowy Oryginalny Turecki Kebab',
     ratingText: '4.8 na Google',
     bestsellerBadge: 'Bestseller #1', bestsellerBadge2: 'Bestseller #2',
+    soldOutBadge: 'Wyprzedane', soldOutLabel: 'Niedostępne',
     navMenu: 'Menu', navAbout: 'O nas', navLocation: 'Lokalizacja', navContact: 'Kontakt', navPromo: 'Promocje', navOrder: 'Zamów online',
     langButton: 'EN',
     promoTitle: 'Nasze promocje', promoSubtitle: 'Drobne gesty, które sprawiają, że wracasz częściej.',
@@ -906,6 +923,7 @@ const CONTENT = {
     tagline: '100% Craft Original Turkish Kebab',
     ratingText: '4.8 on Google',
     bestsellerBadge: 'Bestseller #1', bestsellerBadge2: 'Bestseller #2',
+    soldOutBadge: 'Sold out', soldOutLabel: 'Unavailable',
     navMenu: 'Menu', navAbout: 'About', navLocation: 'Location', navContact: 'Contact', navPromo: 'Promos', navOrder: 'Order online',
     langButton: 'PL',
     promoTitle: 'Our promos', promoSubtitle: 'Small perks that keep you coming back.',
@@ -961,7 +979,7 @@ const MENU_DATA = [
     { id: 'combo-beef-cheese', badge: 1, img: 'assets/images/zestaw-wolowina-serem.jpg', pl: 'Zestaw Wołowina z Serem + Frytki + Napój', en: 'Beef & Cheese Combo + Fries + Drink', descPl: '100% kraft wołowina z serem.', descEn: '100% craft beef with cheese.', price: 39.99 },
     { id: 'combo-beef-jalapeno', badge: 2, img: 'assets/images/zestaw-wolowina-jalapeno.jpg', pl: 'Zestaw Wołowina z Jalapeño + Frytki + Napój', en: 'Beef & Jalapeño Combo + Fries + Drink', descPl: '100% kraft wołowina z jalapeño.', descEn: '100% craft beef with jalapeño.', price: 39.99 },
     { id: 'combo-lawasz-beef', img: 'assets/images/zestaw-lawasz-wolowina.jpg', pl: 'Zestaw Lawasz Wołowina + Frytki + Napój', en: 'Beef Lavash Combo + Fries + Drink', descPl: '100% kraft wołowina.', descEn: '100% craft beef.', price: 38.99 },
-    { id: 'combo-lawasz-chicken', img: 'assets/images/zestaw-lawasz-kurczak.png', pl: 'Zestaw Lawasz Kurczak + Frytki + Napój', en: 'Chicken Lavash Combo + Fries + Drink', descPl: '100% kraft kurczak.', descEn: '100% craft chicken.', price: 35.99 },
+    { id: 'combo-lawasz-chicken', soldOut: true, img: 'assets/images/zestaw-lawasz-kurczak.png', pl: 'Zestaw Lawasz Kurczak + Frytki + Napój', en: 'Chicken Lavash Combo + Fries + Drink', descPl: '100% kraft kurczak.', descEn: '100% craft chicken.', price: 35.99 },
     { id: 'combo-lawasz-chicken-cheese', img: 'assets/images/zestaw-lawasz-kurczak-serem.jpg', pl: 'Zestaw Lawasz Kurczak z Serem + Frytki + Napój', en: 'Chicken & Cheese Lavash Combo + Fries + Drink', descPl: '100% kraft kurczak z serem.', descEn: '100% craft chicken with cheese.', price: 37.99 },
     { id: 'combo-lawasz-chicken-jalapeno', img: 'assets/images/zestaw-lawasz-kurczak-jalapeno.jpg', pl: 'Zestaw Lawasz Kurczak z Jalapeño + Frytki + Napój', en: 'Chicken & Jalapeño Lavash Combo + Fries + Drink', descPl: '100% kraft kurczak z jalapeño.', descEn: '100% craft chicken with jalapeño.', price: 37.99 },
     { id: 'combo-bulka', img: 'assets/images/zestaw-w-bulce.jpg', pl: 'Zestaw W Bułce + Frytki + Napój', en: 'Bun Combo + Fries + Drink', descPl: '100% kraft mięso.', descEn: '100% craft meat.', price: 36.99 },
@@ -975,7 +993,7 @@ const MENU_DATA = [
     { id: 'lawasz-beef-jalapeno', img: 'assets/images/lawasz-wolowina-jalapeno.jpg', pl: 'Lawasz Wołowina z Jalapeño', en: 'Beef & Jalapeño Lavash', descPl: '100% kraft wołowina z jalapeño.', descEn: '100% craft beef with jalapeño.', price: 29.99 },
     { id: 'lawasz-chicken', img: 'assets/images/lawasz-kurczak.jpg', pl: 'Lawasz Kurczak', en: 'Chicken Lavash', descPl: '100% kraft kurczak.', descEn: '100% craft chicken.', price: 26.99 },
     { id: 'lawasz-chicken-cheese', img: 'assets/images/lawasz-kurczak-serem.jpg', pl: 'Lawasz Kurczak z Serem', en: 'Chicken & Cheese Lavash', descPl: '100% kraft kurczak z serem.', descEn: '100% craft chicken with cheese.', price: 27.99 },
-    { id: 'lawasz-chicken-jalapeno', img: 'assets/images/lawasz-kurczak-jalapeno.jpg', pl: 'Lawasz Kurczak z Jalapeño', en: 'Chicken & Jalapeño Lavash', descPl: '100% kraft kurczak z jalapeño.', descEn: '100% craft chicken with jalapeño.', price: 27.99 },
+    { id: 'lawasz-chicken-jalapeno', soldOut: true, img: 'assets/images/lawasz-kurczak-jalapeno.jpg', pl: 'Lawasz Kurczak z Jalapeño', en: 'Chicken & Jalapeño Lavash', descPl: '100% kraft kurczak z jalapeño.', descEn: '100% craft chicken with jalapeño.', price: 27.99 },
     { id: 'bulka-kebab', img: 'assets/images/bulce-kebab.jpg', pl: 'W Bułce Kebab', en: 'Bun Kebab', descPl: '100% kraft mięso.', descEn: '100% craft meat.', price: 26.99 },
     { id: 'bulka-kebab-cheese', img: 'assets/images/bulce-serem.jpg', pl: 'W Bułce Kebab z Serem', en: 'Bun Kebab with Cheese', descPl: '100% kraft mięso z serem.', descEn: '100% craft meat with cheese.', price: 28.99 },
     { id: 'bulka-kebab-jalapeno', img: 'assets/images/bulce-jalapeno.jpg', pl: 'W Bułce Kebab z Jalapeño', en: 'Bun Kebab with Jalapeño', descPl: '100% kraft mięso z jalapeño.', descEn: '100% craft meat with jalapeño.', price: 28.99 },
@@ -1036,16 +1054,24 @@ class Component extends DCLogic {
     ];
     const current = LANGS.find(l => l.code === this.state.lang) || LANGS[0];
     const langOptions = LANGS.map(l => ({ ...l, choose: () => this.setState({ lang: l.code, langMenuOpen: false }) }));
-    const isPl = this.state.lang !== 'en';
+    const lc = this.state.lang || 'pl';
+    const cap = lc.charAt(0).toUpperCase() + lc.slice(1);
     const menuCategories = MENU_DATA.map(cat => ({
-      title: isPl ? cat.pl : cat.en,
-      note: isPl ? cat.notePl : cat.noteEn,
+      title: cat[lc] || cat.pl,
+      note: cat['note' + cap] || cat.notePl,
       items: cat.items.map(it => {
-        const name = isPl ? it.pl : it.en;
-        const desc = isPl ? it.descPl : it.descEn;
-        const badge = it.badge === 1 ? t.bestsellerBadge : it.badge === 2 ? t.bestsellerBadge2 : '';
+        const name = it[lc] || it.pl;
+        const desc = it['desc' + cap] || it.descPl;
+        const soldOut = it.soldOut === true;
+        const badge = soldOut ? t.soldOutBadge : it.badge === 1 ? t.bestsellerBadge : it.badge === 2 ? t.bestsellerBadge2 : '';
+        const badgeColor = soldOut ? '#6b6b6b' : '#c1362b';
         const imgSize = it.badge ? 104 : it.img ? 84 : 72;
-        return { id: it.id, imgId: 'menu-' + it.id, img: it.img || '', imgSize, badge, name, desc, price: it.price, addLabel: name + ' – ' + it.price + ' zł', add: () => this.addToCart({ id: it.id, name, price: it.price }) };
+        return {
+          id: it.id, imgId: 'menu-' + it.id, img: it.img || '', imgSize, imgFilter: soldOut ? 'grayscale(1)' : 'none',
+          badge, badgeColor, name, desc, price: it.price, rowOpacity: soldOut ? 0.55 : 1,
+          available: !soldOut, soldOut,
+          addLabel: name + ' – ' + it.price + ' zł', add: () => this.addToCart({ id: it.id, name, price: it.price }),
+        };
       }),
     }));
 
@@ -1078,6 +1104,14 @@ class Component extends DCLogic {
       langMenuOpen: this.state.langMenuOpen, langOptions,
       toggleLangMenu: () => this.setState(s => ({ langMenuOpen: !s.langMenuOpen })),
       goHome: () => this.setState({ page: 'home' }),
+      goHomeAbout: () => this.setState({ page: 'home' }, () => {
+        const el = document.getElementById('o-nas');
+        if (el) el.scrollIntoView({ block: 'start' });
+      }),
+      goHomeLocation: () => this.setState({ page: 'home' }, () => {
+        const el = document.getElementById('lokalizacja');
+        if (el) el.scrollIntoView({ block: 'start' });
+      }),
       goMenu: () => this.setState({ page: 'menu' }),
       goContact: () => this.setState({ page: 'contact' }),
       goPromo: () => this.setState({ page: 'promo' }),
