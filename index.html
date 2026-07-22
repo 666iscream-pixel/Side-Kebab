@@ -601,7 +601,15 @@
     </div>
     <div style="text-align:center; margin-bottom:16px; position:relative; z-index:1;">
       <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c1362b; margin-bottom:10px;">{{ t.navMenu }}</div>
-      <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(32px,4vw,48px); margin:0 0 12px;">{{ t.menuTitle }}</h2>
+      <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(32px,4vw,48px); margin:0 0 16px;">{{ t.menuTitle }}</h2>
+      <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px; margin-bottom:16px;">
+        <div style="display:inline-flex; align-items:center; gap:8px; background:#1c6b3f; color:#fff; padding:8px 16px; border-radius:100px; font-size:13px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase;">
+          {{ t.tagline }}
+        </div>
+        <div style="display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid rgba(32,29,25,0.15); color:#201d19; padding:8px 14px; border-radius:100px; font-size:13px; font-weight:700;">
+          <span style="color:#f2a13a;">★★★★★</span> {{ t.ratingText }}
+        </div>
+      </div>
       <p style="font-size:16px; color:rgba(32,29,25,0.6); margin:0 0 24px;">{{ t.menuSubtitle }}</p>
       <div style="display:inline-flex; align-items:center; gap:10px; background:#faf1e4; border:1px dashed #1c6b3f; border-radius:100px; padding:10px 20px; margin:0 0 48px;">
         <span style="font-family:'Bitter',serif; font-weight:800; font-size:13px; color:#1c6b3f; text-transform:uppercase;">{{ t.teaBonusTitle }}</span>
@@ -847,7 +855,7 @@
 const CONTENT = {
   pl: {
     tagline: '100% Kraftowy Oryginalny Turecki Kebab',
-    ratingText: '4.8 (132 opinie Google)',
+    ratingText: '4.8 na Google',
     bestsellerBadge: 'Bestseller #1', bestsellerBadge2: 'Bestseller #2',
     navMenu: 'Menu', navAbout: 'O nas', navLocation: 'Lokalizacja', navContact: 'Kontakt', navPromo: 'Promocje', navOrder: 'Zamów online',
     langButton: 'EN',
@@ -896,7 +904,7 @@ const CONTENT = {
   },
   en: {
     tagline: '100% Craft Original Turkish Kebab',
-    ratingText: '4.8 (132 Google reviews)',
+    ratingText: '4.8 on Google',
     bestsellerBadge: 'Bestseller #1', bestsellerBadge2: 'Bestseller #2',
     navMenu: 'Menu', navAbout: 'About', navLocation: 'Location', navContact: 'Contact', navPromo: 'Promos', navOrder: 'Order online',
     langButton: 'PL',
