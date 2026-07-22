@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/js/dc-runtime.js"></script>
+</head>
+<body>
+
+<x-dc>
+
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-cyrillic.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-cyrillic.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/bitter-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/bitter-cyrillic.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/bitter-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/bitter-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/bitter-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-cyrillic.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-vietnamese.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-latin-ext.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-latin.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/bitter-500.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-cyrillic.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-vietnamese.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-latin-ext.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-latin.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-500.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-cyrillic.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-vietnamese.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-latin-ext.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-latin.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/bitter-500.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-cyrillic.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-vietnamese.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-latin-ext.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400-latin.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-500.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/bitter-400.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+  <script src="assets/js/image-slot.js"></script>
+  <style>
+    body { margin: 0; background: #faf5ec; font-family: 'Inter', sans-serif; }
+    a { color: #1c6b3f; text-decoration: none; }
+    a:hover { color: #c1362b; }
+    ::selection { background: #c1362b; color: #fff; }
+    input::placeholder { color: rgba(32,29,25,0.4); }
+  </style>
+</helmet>
+
+<div style="background:#faf5ec; color:#201d19; min-height:100vh; overflow-x:hidden; position:relative;">
+
+  <!-- HEADER -->
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:14px 32px; background:rgba(250,245,236,0.92); backdrop-filter:blur(6px); border-bottom:1px solid rgba(32,29,25,0.1); gap:16px; flex-wrap:wrap;">
+    <div style="display:flex; align-items:center; gap:12px; cursor:pointer;" sc-camel-on-click="{{ goMenu }}">
+      <img src="assets/images/hero.png" alt="Side Kebab" style="width:46px; height:46px; flex-shrink:0; display:block;">
+      <div>
+        <div style="font-family:'Bitter',serif; font-weight:800; font-size:22px; letter-spacing:0.5px; line-height:1;">SIDE KEBAB</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.3px; color:#c1362b; margin-top:2px;">{{ t.tagline }}</div>
+      </div>
+    </div>
+    <nav style="display:flex; align-items:center; gap:22px; font-size:15px; font-weight:600;">
+      <a href="#" sc-camel-on-click="{{ goMenu }}" style="color:#201d19;">{{ t.navMenu }}</a>
+      <a href="#o-nas" sc-camel-on-click="{{ goHome }}" style="color:#201d19;">{{ t.navAbout }}</a>
+      <a href="#lokalizacja" sc-camel-on-click="{{ goHome }}" style="color:#201d19;">{{ t.navLocation }}</a>
+      <a href="#" sc-camel-on-click="{{ goContact }}" style="color:#201d19;">{{ t.navContact }}</a>
+      <a href="#" sc-camel-on-click="{{ goPromo }}" style="color:#c1362b;">{{ t.navPromo }}</a>
+      <div style="position:relative;">
+        <button sc-camel-on-click="{{ toggleLangMenu }}" style="display:flex; align-items:center; gap:6px; border:1.5px solid rgba(32,29,25,0.25); background:transparent; padding:8px 14px; border-radius:100px; font-weight:700; font-size:13px; cursor:pointer; color:#201d19;" style-hover="border-color:#1c6b3f; color:#1c6b3f;">
+          <img src="https://flagcdn.com/24x18/{{ currentLangFlag }}.png" alt="{{ currentLangLabel }}" style="width:20px; height:15px; border-radius:2px; display:block; object-fit:cover;"><span>{{ currentLangLabel }}</span><span style="font-size:10px;">▾</span>
+        </button>
+        <sc-if value="{{ langMenuOpen }}">
+          <div style="position:absolute; top:calc(100% + 8px); right:0; background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,0.14); padding:6px; display:flex; flex-direction:column; min-width:150px; z-index:60;">
+            <sc-for list="{{ langOptions }}" as="lo" hint-placeholder-count="4">
+              <button sc-camel-on-click="{{ lo.choose }}" style="display:flex; align-items:center; gap:10px; background:none; border:none; padding:10px 12px; border-radius:8px; cursor:pointer; font-size:14px; font-weight:600; text-align:left; color:#201d19;" style-hover="background:#faf1e4;">
+                <img src="https://flagcdn.com/24x18/{{ lo.flagCc }}.png" alt="{{ lo.label }}" style="width:22px; height:16px; border-radius:2px; display:block; object-fit:cover; flex-shrink:0;"><span>{{ lo.label }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+      <button sc-camel-on-click="{{ toggleCart }}" style="position:relative; display:flex; align-items:center; gap:8px; background:#161412; color:#fff; border:none; padding:10px 18px; border-radius:100px; font-weight:700; font-size:14px; cursor:pointer;" style-hover="background:#2a2621;">
+        <span style="position:relative; width:18px; height:16px; display:inline-block;">
+          <span style="position:absolute; top:0; left:4px; width:10px; height:8px; border:2px solid #fff; border-bottom:none; border-radius:50% 50% 0 0; box-sizing:border-box;"></span>
+          <span style="position:absolute; bottom:0; left:0; width:18px; height:9px; background:#fff; clip-path:polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);"></span>
+          <span style="position:absolute; bottom:2px; left:6px; width:1.5px; height:5px; background:#161412;"></span>
+          <span style="position:absolute; bottom:2px; left:11px; width:1.5px; height:5px; background:#161412;"></span>
+        </span>
+        {{ t.cartTitle }}
+        <sc-if value="{{ hasCartItems }}">
+          <span style="background:#c1362b; color:#fff; border-radius:100px; min-width:20px; height:20px; display:inline-flex; align-items:center; justify-content:center; font-size:12px; padding:0 5px;">{{ cartCount }}</span>
+        </sc-if>
+      </button>
+    </nav>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <!-- HERO -->
+  <section style="position:relative; min-height:600px; display:flex; align-items:center; padding:64px 48px; box-sizing:border-box; background:#161412; overflow:hidden;">
+    <div style="position:absolute; top:-120px; right:-120px; width:420px; height:420px; border-radius:50%; background:#1c6b3f; opacity:0.35; filter:blur(10px);"></div>
+    <div style="position:absolute; bottom:-160px; left:40%; width:320px; height:320px; border-radius:50%; background:#c1362b; opacity:0.25; filter:blur(10px);"></div>
+    <div style="position:relative; z-index:2; max-width:640px;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:#1c6b3f; color:#fff; padding:8px 16px; border-radius:100px; font-size:13px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; margin-bottom:20px;">
+        {{ t.tagline }}
+      </div>
+      <h1 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(40px,6vw,68px); line-height:1.15; color:#fff; margin:0 0 20px;">{{ t.heroTitleA }}<br>{{ t.heroTitleB }}</h1>
+      <p style="font-size:19px; line-height:1.5; color:rgba(255,255,255,0.82); max-width:500px; margin:0 0 32px;">{{ t.heroSub }}</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px;">
+        <a href="#zamow" style="background:#c1362b; color:#fff; padding:15px 28px; border-radius:100px; font-weight:700; font-size:16px;" style-hover="background:#a32c22;">{{ t.navOrder }}</a>
+        <a href="#" sc-camel-on-click="{{ goMenu }}" style="background:rgba(255,255,255,0.1); border:1.5px solid rgba(255,255,255,0.5); color:#fff; padding:15px 28px; border-radius:100px; font-weight:700; font-size:16px;" style-hover="background:rgba(255,255,255,0.2);">{{ t.heroMenuBtn }}</a>
+      </div>
+    </div>
+    <div style="position:relative; z-index:2; margin-left:auto; display:flex; align-items:center; justify-content:center; width:260px; height:260px; flex-shrink:0;">
+      <div style="width:220px; height:220px; border-radius:50%; background:#faf5ec; display:flex; align-items:center; justify-content:center;">
+        <img src="assets/images/hero.png" alt="Side Kebab" style="width:170px; height:170px; display:block;">
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE STRIP -->
+  <section style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(32,29,25,0.1); border-bottom:1px solid rgba(32,29,25,0.1);">
+    <sc-for list="{{ features }}" as="f" hint-placeholder-count="3">
+      <div style="background:#faf5ec; padding:36px 32px; display:flex; flex-direction:column; gap:8px;">
+        <div style="font-family:'Bitter',serif; font-weight:800; font-size:17px; color:#1c6b3f;">{{ f.title }}</div>
+        <div style="font-size:15px; line-height:1.5; color:rgba(32,29,25,0.7);">{{ f.desc }}</div>
+      </div>
+    </sc-for>
+  </section>
+
+  <!-- MENU TEASER -->
+  <section id="menu" style="padding:96px 48px; max-width:800px; margin:0 auto; text-align:center;">
+    <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c1362b; margin-bottom:10px;">{{ t.navMenu }}</div>
+    <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(32px,4vw,48px); margin:0 0 16px;">{{ t.menuTitle }}</h2>
+    <p style="font-size:17px; line-height:1.6; color:rgba(32,29,25,0.65); margin:0 0 32px;">{{ t.menuTeaserDesc }}</p>
+    <a href="#" sc-camel-on-click="{{ goMenu }}" style="display:inline-block; background:#1c6b3f; color:#fff; padding:16px 32px; border-radius:100px; font-weight:700; font-size:16px;" style-hover="background:#154f2f;">{{ t.menuTeaserCta }}</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="o-nas" style="background:#1a1815; color:#faf5ec; padding:96px 48px;">
+    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div>
+        <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#e8a99f; margin-bottom:10px;">{{ t.navAbout }}</div>
+        <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(28px,3.5vw,40px); margin:0 0 20px; line-height:1.1;">{{ t.aboutTitle }}</h2>
+        <p style="font-size:17px; line-height:1.7; color:rgba(250,245,236,0.8); margin:0 0 16px;">{{ t.aboutP1 }}</p>
+        <p style="font-size:17px; line-height:1.7; color:rgba(250,245,236,0.8); margin:0;">{{ t.aboutP2 }}</p>
+        <div style="display:flex; gap:32px; margin-top:32px;">
+          <div>
+            <div style="font-family:'Bitter',serif; font-weight:800; font-size:28px; color:#e8a99f;">100%</div>
+            <div style="font-size:14px; color:rgba(250,245,236,0.65);">{{ t.stat1 }}</div>
+          </div>
+          <div>
+            <div style="font-family:'Bitter',serif; font-weight:800; font-size:28px; color:#e8a99f;">TR</div>
+            <div style="font-size:14px; color:rgba(250,245,236,0.65);">{{ t.stat2 }}</div>
+          </div>
+        </div>
+      </div>
+      <div style="border-radius:20px; background:#161412; border:1px solid rgba(250,245,236,0.15); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-60px; left:-60px; width:220px; height:220px; border-radius:50%; background:#1c6b3f; opacity:0.4; filter:blur(4px);"></div>
+        <div style="position:absolute; bottom:-70px; right:-50px; width:200px; height:200px; border-radius:50%; background:#c1362b; opacity:0.3; filter:blur(4px);"></div>
+        <div style="position:relative; z-index:1; width:170px; height:170px; border-radius:50%; background:#faf5ec; display:flex; align-items:center; justify-content:center;">
+          <img src="assets/images/hero.png" alt="Side Kebab" style="width:135px; height:135px; display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER: CLICK&COLLECT / DELIVERY -->
+  <section id="zamow" style="padding:96px 48px; max-width:1100px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:56px;">
+      <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c1362b; margin-bottom:10px;">{{ t.navOrder }}</div>
+      <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(32px,4vw,48px); margin:0;">{{ t.orderTitle }}</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+      <div style="background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:20px; padding:40px; display:flex; flex-direction:column; gap:18px;">
+        <div style="width:48px; height:48px; border-radius:12px; background:rgba(28,107,63,0.12); display:flex; align-items:center; justify-content:center;">
+          <div style="position:relative; width:26px; height:20px;">
+            <div style="position:absolute; top:0; left:0; width:26px; height:4px; background:#1c6b3f; border-radius:2px;"></div>
+            <div style="position:absolute; top:4px; left:3px; width:3px; height:16px; background:#1c6b3f; border-radius:1px; transform:rotate(6deg);"></div>
+            <div style="position:absolute; top:4px; right:3px; width:3px; height:16px; background:#1c6b3f; border-radius:1px; transform:rotate(-6deg);"></div>
+          </div>
+        </div>
+        <h3 style="font-family:'Bitter',serif; font-weight:800; font-size:24px; margin:0;">{{ t.pickupTitle }}</h3>
+        <p style="font-size:15px; line-height:1.6; color:rgba(32,29,25,0.65); margin:0; flex:1;">{{ t.pickupDesc }}</p>
+        <div style="display:flex; align-items:center; gap:10px; background:#faf1e4; border:1px dashed #1c6b3f; border-radius:10px; padding:10px 14px;">
+          <span style="font-family:'Bitter',serif; font-weight:800; font-size:13px; color:#1c6b3f; text-transform:uppercase;">{{ t.teaBonusTitle }}</span>
+          <span style="font-size:13px; color:rgba(32,29,25,0.7); line-height:1.4;">{{ t.teaBonusText }}</span>
+        </div>
+        <a href="#" sc-camel-on-click="{{ goMenu }}" style="background:#1c6b3f; color:#fff; padding:14px 24px; border-radius:12px; font-weight:700; font-size:15px; text-align:center;" style-hover="background:#154f2f;">{{ t.pickupCta }}</a>
+      </div>
+      <div style="background:#1c6b3f; border-radius:20px; padding:40px; color:#fff; display:flex; flex-direction:column; gap:18px;">
+        <div style="width:48px; height:48px; border-radius:12px; background:rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center;">
+          <div style="position:relative; width:32px; height:22px;">
+            <div style="position:absolute; bottom:0; left:2px; width:10px; height:10px; border:3px solid #fff; border-radius:50%; box-sizing:border-box;"></div>
+            <div style="position:absolute; bottom:0; right:2px; width:10px; height:10px; border:3px solid #fff; border-radius:50%; box-sizing:border-box;"></div>
+            <div style="position:absolute; bottom:8px; left:7px; width:16px; height:3px; background:#fff; border-radius:2px; transform:rotate(-8deg);"></div>
+            <div style="position:absolute; bottom:10px; right:4px; width:3px; height:12px; background:#fff; border-radius:2px; transform:rotate(20deg);"></div>
+            <div style="position:absolute; top:0; right:1px; width:9px; height:3px; background:#fff; border-radius:2px;"></div>
+          </div>
+        </div>
+        <h3 style="font-family:'Bitter',serif; font-weight:800; font-size:24px; margin:0;">{{ t.deliveryTitle }}</h3>
+        <p style="font-size:15px; line-height:1.6; color:rgba(255,255,255,0.85); margin:0; flex:1;">{{ t.deliveryDesc }}</p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a href="#" style="background:#fff; color:#1a1815; padding:14px 20px; border-radius:12px; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:space-between;" style-hover="background:#eae4d8;">Pyszne.pl <span>→</span></a>
+          <a href="#" style="background:rgba(255,255,255,0.14); border:1.5px solid rgba(255,255,255,0.5); color:#fff; padding:14px 20px; border-radius:12px; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:space-between;" style-hover="background:rgba(255,255,255,0.24);">Bolt Food <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="lokalizacja" style="padding:0 48px 96px; max-width:1100px; margin:0 auto;">
+    <div style="background:#faf1e4; border-radius:20px; padding:48px; display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+      <div>
+        <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c1362b; margin-bottom:10px;">{{ t.navLocation }}</div>
+        <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(26px,3vw,34px); margin:0 0 20px;">{{ t.locationTitle }}</h2>
+        <div style="font-weight:700; font-size:16px; margin-bottom:4px;">Warszawa</div>
+        <div style="font-size:15px; color:rgba(32,29,25,0.65); line-height:1.5; margin-bottom:8px;">{{ t.locationDesc }}</div>
+        <a href="https://share.google/GfVbZ5JAfW7DhqkG3" target="_blank" style="font-weight:700; font-size:15px;">{{ t.mapsLink }} →</a>
+      </div>
+      <div>
+        <div style="font-weight:700; font-size:16px; margin-bottom:4px;">{{ t.hoursTitle }}</div>
+        <div style="font-size:15px; color:rgba(32,29,25,0.65); line-height:1.7;">{{ t.hoursDesc }}</div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ isMenu }}">
+  <!-- MENU PAGE -->
+  <section style="padding:64px 48px 120px; max-width:100%; margin:0; position:relative; overflow:hidden; background:#ecdfc4;">
+   <div style="max-width:1000px; margin:0 auto;">
+    <div style="position:absolute; top:20px; right:-10px; display:flex; align-items:flex-end; gap:10px; opacity:0.14; pointer-events:none; z-index:0;">
+      <div style="width:70px; height:110px; background:#c1362b; clip-path:polygon(15% 100%, 0 15%, 100% 15%, 85% 100%); display:flex; align-items:flex-start; justify-content:center; gap:6px; padding-top:8px;">
+        <div style="width:8px; height:44px; background:#f2c14e; border-radius:2px 2px 0 0;"></div>
+        <div style="width:8px; height:56px; background:#f2c14e; border-radius:2px 2px 0 0;"></div>
+        <div style="width:8px; height:38px; background:#f2c14e; border-radius:2px 2px 0 0;"></div>
+        <div style="width:8px; height:50px; background:#f2c14e; border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="width:44px; height:90px; background:#fff; border:3px solid #201d19; border-radius:3px 3px 10px 10px; position:relative;">
+        <div style="position:absolute; top:-16px; right:6px; width:5px; height:26px; background:#201d19; transform:rotate(18deg); border-radius:2px;"></div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-bottom:16px; position:relative; z-index:1;">
+      <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c1362b; margin-bottom:10px;">{{ t.navMenu }}</div>
+      <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(32px,4vw,48px); margin:0 0 12px;">{{ t.menuTitle }}</h2>
+      <p style="font-size:16px; color:rgba(32,29,25,0.6); margin:0 0 24px;">{{ t.menuSubtitle }}</p>
+      <div style="display:inline-flex; align-items:center; gap:10px; background:#faf1e4; border:1px dashed #1c6b3f; border-radius:100px; padding:10px 20px; margin:0 0 48px;">
+        <span style="font-family:'Bitter',serif; font-weight:800; font-size:13px; color:#1c6b3f; text-transform:uppercase;">{{ t.teaBonusTitle }}</span>
+        <span style="font-size:13px; color:rgba(32,29,25,0.7);">{{ t.teaBonusText }}</span>
+      </div>
+    </div>
+
+    <sc-for list="{{ menuCategories }}" as="cat" hint-placeholder-count="5">
+      <div style="margin-bottom:40px; position:relative; z-index:1;">
+        <div style="display:inline-block; background:#1a1815; color:#fff; font-family:'Bitter',serif; font-weight:700; font-size:14px; letter-spacing:0.5px; text-transform:uppercase; padding:6px 16px; border-radius:6px; margin-bottom:14px;">{{ cat.title }}</div>
+        <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="3">
+          <div style="background:#fff; border:1px solid rgba(32,29,25,0.1); border-radius:14px; padding:14px; margin-bottom:12px; display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+            <image-slot id="{{ item.imgId }}" shape="rounded" radius="10" style="width:72px; height:72px; flex-shrink:0;" placeholder="{{ item.name }}"></image-slot>
+            <div style="flex:1; min-width:180px;">
+              <div style="font-size:16px; font-weight:700; margin-bottom:3px;">{{ item.name }}</div>
+              <div style="font-size:13px; line-height:1.5; color:rgba(32,29,25,0.6);">{{ item.desc }}</div>
+            </div>
+            <button sc-camel-on-click="{{ item.add }}" style="background:#faf1e4; border:1.5px solid transparent; padding:10px 20px; border-radius:10px; cursor:pointer; flex-shrink:0;" style-hover="border-color:#1c6b3f; background:#eef4ef;">
+              <span style="font-family:'Bitter',serif; font-weight:800; font-size:16px; color:#1c6b3f; white-space:nowrap;">{{ item.price }} zł</span>
+            </button>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+   </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ isPromo }}">
+  <!-- PROMO PAGE -->
+  <section style="padding:64px 48px 96px; max-width:900px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c1362b; margin-bottom:10px;">{{ t.navPromo }}</div>
+      <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(32px,4vw,48px); margin:0 0 12px;">{{ t.promoTitle }}</h2>
+      <p style="font-size:17px; color:rgba(32,29,25,0.65); max-width:520px; margin:0 auto;">{{ t.promoSubtitle }}</p>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+      <div style="background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:20px; padding:36px; display:flex; flex-direction:column; gap:16px;">
+        <div style="width:56px; height:56px; border-radius:14px; background:#faf1e4; display:flex; align-items:center; justify-content:center;">
+          <div style="width:16px; height:20px; background:#f4f0e6; border:2px solid #cfd8d3; border-radius:2px 2px 6px 6px; position:relative;">
+            <div style="position:absolute; top:-6px; left:6px; width:2px; height:8px; background:#c1362b; transform:rotate(15deg);"></div>
+          </div>
+        </div>
+        <h3 style="font-family:'Bitter',serif; font-weight:800; font-size:22px; margin:0;">{{ t.teaBonusTitle }}</h3>
+        <p style="font-size:15px; line-height:1.6; color:rgba(32,29,25,0.65); margin:0;">{{ t.teaBonusText }}</p>
+      </div>
+      <div style="background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:20px; padding:36px; display:flex; flex-direction:column; gap:16px;">
+        <div style="width:56px; height:56px; border-radius:14px; background:#faf1e4; display:flex; align-items:center; justify-content:center;">
+          <div style="width:18px; height:20px; background:#c1362b; clip-path:polygon(15% 100%, 0 20%, 100% 20%, 85% 100%); display:flex; align-items:flex-start; justify-content:center; gap:2px; padding-top:2px;">
+            <div style="width:2px; height:12px; background:#f2c14e;"></div>
+            <div style="width:2px; height:15px; background:#f2c14e;"></div>
+            <div style="width:2px; height:10px; background:#f2c14e;"></div>
+          </div>
+        </div>
+        <h3 style="font-family:'Bitter',serif; font-weight:800; font-size:22px; margin:0;">{{ t.friesPromoTitle }}</h3>
+        <p style="font-size:15px; line-height:1.6; color:rgba(32,29,25,0.65); margin:0;">{{ t.friesPromoText }}</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="#" sc-camel-on-click="{{ goMenu }}" style="display:inline-block; background:#1c6b3f; color:#fff; padding:16px 32px; border-radius:100px; font-weight:700; font-size:16px;" style-hover="background:#154f2f;">{{ t.menuTeaserCta }}</a>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ isContact }}">
+  <!-- CONTACT PAGE -->
+  <section style="padding:64px 48px 96px; max-width:1100px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c1362b; margin-bottom:10px;">{{ t.navContact }}</div>
+      <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(32px,4vw,48px); margin:0 0 12px;">{{ t.contactTitle }}</h2>
+      <p style="font-size:17px; color:rgba(32,29,25,0.65); max-width:520px; margin:0 auto;">{{ t.contactSubtitle }}</p>
+    </div>
+    <div style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:40px; align-items:start;">
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <div style="background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:16px; padding:28px;">
+          <div style="font-weight:700; font-size:15px; text-transform:uppercase; letter-spacing:0.5px; color:#1c6b3f; margin-bottom:8px;">{{ t.addressLabel }}</div>
+          <div style="font-weight:700; font-size:18px; margin-bottom:6px;">Warszawa</div>
+          <div style="font-size:15px; color:rgba(32,29,25,0.65); line-height:1.5; margin-bottom:10px;">{{ t.locationDesc }}</div>
+          <a href="https://share.google/GfVbZ5JAfW7DhqkG3" target="_blank" style="font-weight:700; font-size:15px;">{{ t.mapsLink }} →</a>
+        </div>
+        <div style="background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:16px; padding:28px;">
+          <div style="font-weight:700; font-size:15px; text-transform:uppercase; letter-spacing:0.5px; color:#1c6b3f; margin-bottom:8px;">{{ t.phoneLabel }}</div>
+          <a href="tel:+48000000000" style="font-family:'Bitter',serif; font-weight:800; font-size:22px; color:#201d19;">+48 000 000 000</a>
+        </div>
+        <div style="background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:16px; padding:28px;">
+          <div style="font-weight:700; font-size:15px; text-transform:uppercase; letter-spacing:0.5px; color:#1c6b3f; margin-bottom:8px;">{{ t.hoursTitle }}</div>
+          <div style="font-size:15px; color:rgba(32,29,25,0.65); line-height:1.7;">{{ t.hoursDesc }}</div>
+        </div>
+      </div>
+      <div style="border-radius:16px; overflow:hidden; border:1px solid rgba(32,29,25,0.12); min-height:420px; position:relative;">
+        <iframe title="map" src="https://maps.google.com/maps?q=Side+Kebab+Warszawa&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="100%" style="border:0; min-height:420px; display:block; position:absolute; inset:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid rgba(32,29,25,0.1); padding:40px 48px 28px; display:flex; flex-direction:column; gap:24px;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="assets/images/hero.png" alt="Side Kebab" style="width:32px; height:32px; display:block;">
+        <div>
+          <div style="font-family:'Bitter',serif; font-weight:800; font-size:16px;">SIDE KEBAB</div>
+          <div style="font-size:13px; color:rgba(32,29,25,0.55); margin-top:2px;">{{ t.tagline }} · Warszawa</div>
+        </div>
+      </div>
+      <nav style="display:flex; align-items:center; gap:20px; font-size:14px; font-weight:600; flex-wrap:wrap;">
+        <a href="#" sc-camel-on-click="{{ goMenu }}" style="color:#201d19;">{{ t.navMenu }}</a>
+        <a href="#o-nas" sc-camel-on-click="{{ goHome }}" style="color:#201d19;">{{ t.navAbout }}</a>
+        <a href="#lokalizacja" sc-camel-on-click="{{ goHome }}" style="color:#201d19;">{{ t.navLocation }}</a>
+        <a href="#" sc-camel-on-click="{{ goContact }}" style="color:#201d19;">{{ t.navContact }}</a>
+      </nav>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; border-top:1px solid rgba(32,29,25,0.08); padding-top:20px;">
+      <div style="font-size:13px; color:rgba(32,29,25,0.45);">© 2026 Side Kebab</div>
+      <div style="display:flex; gap:20px; font-size:13px; font-weight:600;">
+        <a href="#" sc-camel-on-click="{{ goPrivacy }}" style="color:rgba(32,29,25,0.55);">{{ t.privacyLink }}</a>
+        <a href="#" sc-camel-on-click="{{ goCookies }}" style="color:rgba(32,29,25,0.55);">{{ t.cookiesLink }}</a>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ isPrivacy }}">
+  <section style="padding:64px 48px 96px; max-width:760px; margin:0 auto;">
+    <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(28px,4vw,40px); margin:0 0 24px;">{{ t.privacyLink }}</h2>
+    <p style="font-size:16px; line-height:1.7; color:rgba(32,29,25,0.7);">{{ t.privacyText }}</p>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ isCookies }}">
+  <section style="padding:64px 48px 96px; max-width:760px; margin:0 auto;">
+    <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(28px,4vw,40px); margin:0 0 24px;">{{ t.cookiesLink }}</h2>
+    <p style="font-size:16px; line-height:1.7; color:rgba(32,29,25,0.7);">{{ t.cookiesText }}</p>
+  </section>
+  </sc-if>
+
+  <!-- CART BACKDROP -->
+  <sc-if value="{{ cartOpen }}">
+    <div sc-camel-on-click="{{ toggleCart }}" style="position:fixed; inset:0; background:rgba(20,18,15,0.45); z-index:200;"></div>
+  </sc-if>
+
+  <!-- CART DRAWER -->
+  <div style="position:fixed; top:0; right:0; height:100vh; width:min(420px,100vw); background:#fff; z-index:201; box-shadow:-8px 0 32px rgba(0,0,0,0.15); transform:{{ cartTransform }}; transition:transform 0.3s ease; display:flex; flex-direction:column;">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:20px 24px; border-bottom:1px solid rgba(32,29,25,0.1);">
+      <div style="font-family:'Bitter',serif; font-weight:800; font-size:19px;">{{ cartHeaderTitle }}</div>
+      <button sc-camel-on-click="{{ toggleCart }}" style="background:none; border:none; font-size:22px; cursor:pointer; color:#201d19; line-height:1;">×</button>
+    </div>
+
+    <div style="flex:1; overflow-y:auto; padding:24px;">
+      <sc-if value="{{ showPaidView }}">
+        <div style="text-align:center; padding:32px 8px;">
+          <div style="width:56px; height:56px; border-radius:50%; background:#1c6b3f; color:#fff; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 20px;">✓</div>
+          <div style="font-family:'Bitter',serif; font-weight:800; font-size:20px; margin-bottom:10px;">{{ t.thankYou }}</div>
+          <div style="font-size:15px; color:rgba(32,29,25,0.65); margin-bottom:6px;">{{ t.paidAmountLabel }} {{ lastOrderTotal }} zł</div>
+          <div style="font-size:15px; color:rgba(32,29,25,0.65); margin-bottom:28px;">{{ t.paidMethodLabel }} {{ lastPaymentLabel }}</div>
+          <button sc-camel-on-click="{{ newOrder }}" style="background:#1c6b3f; color:#fff; border:none; padding:14px 24px; border-radius:100px; font-weight:700; font-size:15px; cursor:pointer;">{{ t.newOrder }}</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showEmptyView }}">
+        <div style="text-align:center; padding:48px 8px; color:rgba(32,29,25,0.55); font-size:15px;">{{ t.cartEmpty }}</div>
+      </sc-if>
+
+      <sc-if value="{{ showCartListView }}">
+        <sc-for list="{{ cartRows }}" as="row" hint-placeholder-count="2">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; padding:14px 0; border-bottom:1px dashed rgba(32,29,25,0.15);">
+            <div style="flex:1;">
+              <div style="font-weight:700; font-size:14.5px;">{{ row.name }}</div>
+              <div style="font-size:13px; color:rgba(32,29,25,0.55); margin-top:2px;">{{ row.price }} zł</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <button sc-camel-on-click="{{ row.dec }}" style="width:26px; height:26px; border-radius:50%; border:1px solid rgba(32,29,25,0.25); background:#fff; cursor:pointer; font-size:16px; line-height:1;">−</button>
+              <span style="min-width:16px; text-align:center; font-weight:700;">{{ row.qty }}</span>
+              <button sc-camel-on-click="{{ row.inc }}" style="width:26px; height:26px; border-radius:50%; border:1px solid rgba(32,29,25,0.25); background:#fff; cursor:pointer; font-size:16px; line-height:1;">+</button>
+            </div>
+            <div style="font-family:'Bitter',serif; font-weight:800; font-size:15px; min-width:56px; text-align:right;">{{ row.lineTotal }} zł</div>
+            <button sc-camel-on-click="{{ row.remove }}" style="background:none; border:none; color:rgba(32,29,25,0.4); cursor:pointer; font-size:16px;">×</button>
+          </div>
+        </sc-for>
+      </sc-if>
+
+      <sc-if value="{{ checkoutOpen }}">
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div style="font-size:14px; font-weight:700; color:#1c6b3f; text-transform:uppercase; letter-spacing:0.5px;">{{ t.checkoutTitle }}</div>
+          <div>
+            <label style="font-size:13px; font-weight:600; display:block; margin-bottom:6px;">{{ t.nameLabel }}</label>
+            <input value="{{ form.name }}" sc-camel-on-change="{{ setName }}" placeholder="Jan Kowalski" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1.5px solid rgba(32,29,25,0.2); font-size:15px; font-family:inherit;">
+          </div>
+          <div>
+            <label style="font-size:13px; font-weight:600; display:block; margin-bottom:6px;">{{ t.emailLabel }}</label>
+            <input value="{{ form.email }}" sc-camel-on-change="{{ setEmail }}" type="email" placeholder="jan@przyklad.pl" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1.5px solid rgba(32,29,25,0.2); font-size:15px; font-family:inherit;">
+          </div>
+          <div>
+            <label style="font-size:13px; font-weight:600; display:block; margin-bottom:6px;">{{ t.phoneLabel }}</label>
+            <input value="{{ form.phone }}" sc-camel-on-change="{{ setPhone }}" type="tel" placeholder="+48 600 000 000" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1.5px solid rgba(32,29,25,0.2); font-size:15px; font-family:inherit;">
+          </div>
+          <div>
+            <label style="font-size:13px; font-weight:600; display:block; margin-bottom:6px;">{{ t.paymentLabel }}</label>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <sc-for list="{{ paymentOptions }}" as="po" hint-placeholder-count="3">
+                <button sc-camel-on-click="{{ po.choose }}" style="flex:1; min-width:100px; padding:12px 10px; border-radius:10px; border:1.5px solid {{ po.borderColor }}; background:{{ po.bg }}; color:{{ po.color }}; font-weight:700; font-size:13.5px; cursor:pointer;">{{ po.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:15px; font-weight:700; padding-top:8px; border-top:1px solid rgba(32,29,25,0.1);">
+            <span>{{ t.subtotalLabel }}</span><span>{{ subtotal }} zł</span>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ showFooterActions }}">
+      <div style="padding:20px 24px; border-top:1px solid rgba(32,29,25,0.1); display:flex; flex-direction:column; gap:10px;">
+        <sc-if value="{{ showSubtotalBar }}">
+          <div style="display:flex; justify-content:space-between; font-size:16px; font-weight:700;">
+            <span>{{ t.subtotalLabel }}</span><span>{{ subtotal }} zł</span>
+          </div>
+        </sc-if>
+        <sc-if value="{{ showCheckoutButton }}">
+          <button sc-camel-on-click="{{ openCheckout }}" style="background:#1c6b3f; color:#fff; border:none; padding:15px; border-radius:12px; font-weight:700; font-size:15px; cursor:pointer;">{{ t.checkoutCta }}</button>
+        </sc-if>
+        <sc-if value="{{ checkoutOpen }}">
+          <div style="display:flex; gap:10px;">
+            <button sc-camel-on-click="{{ backToCart }}" style="flex:1; background:#faf1e4; color:#201d19; border:none; padding:15px; border-radius:12px; font-weight:700; font-size:15px; cursor:pointer;">{{ t.backToCart }}</button>
+            <button sc-camel-on-click="{{ pay }}" disabled="{{ payDisabled }}" style="flex:2; background:{{ payButtonBg }}; color:#fff; border:none; padding:15px; border-radius:12px; font-weight:700; font-size:15px; cursor:pointer;">{{ t.payButton }} {{ subtotal }} zł</button>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+const CONTENT = {
+  pl: {
+    tagline: '100% Kraftowy Oryginalny Turecki Kebab',
+    navMenu: 'Menu', navAbout: 'O nas', navLocation: 'Lokalizacja', navContact: 'Kontakt', navPromo: 'Promocje', navOrder: 'Zamów online',
+    langButton: 'EN',
+    promoTitle: 'Nasze promocje', promoSubtitle: 'Drobne gesty, które sprawiają, że wracasz częściej.',
+    contactTitle: 'Skontaktuj się z nami', contactSubtitle: 'Adres, telefon i mapa dojazdu — wszystko w jednym miejscu.',
+    addressLabel: 'Adres', phoneLabel: 'Telefon',
+    heroTitleA: 'Kebab robiony', heroTitleB: 'tak, jak w Turcji.',
+    heroSub: 'Mięso krojone płatami, marynowane na miejscu i grillowane na wolnym ogniu. Świeży lawasz, chrupiąca bułka, żadnych skrótów.',
+    heroMenuBtn: 'Zobacz menu',
+    menuTitle: 'Co u nas zjesz', menuSubtitle: 'Kliknij cenę, aby dodać pozycję do koszyka.',
+    menuTeaserDesc: 'Kurczak, mieszane mięso lub wołowina — w lawaszu, bułce, na talerzu lub w boxie.',
+    menuTeaserCta: 'Zobacz pełne menu i zamów',
+    teaBonusTitle: 'Gratis herbata!', teaBonusText: 'Przy odbiorze osobistym (Click & Collect) lub zamówieniu na miejscu — gorąca herbata gratis.',
+    friesPromoTitle: 'Gratis frytki!', friesPromoText: 'Zamawiając dwa duże kebaby (XL lub XXL) dostajesz małe frytki w prezencie.',
+    setTitle: 'Zestaw', setDesc: 'Frytki 200 g + napój',
+    addonsTitle: 'Dodatki', drinksTitle: 'Napoje', friesName: 'Frytki',
+    aboutTitle: 'Rzemiosło, nie masowa produkcja.',
+    aboutP1: 'Side Kebab to mała budka z wielkim szacunkiem do tradycji. Mięso krojone jest ręcznie w płaty, marynowane na miejscu i pieczone na pionowym rożnie — bez przemysłowych „kul mocy" i zbędnych wypełniaczy.',
+    aboutP2: 'Lawasz świeży, sosy własnej roboty, a przepisy proste i uczciwe — dokładnie tak, jak jada się kebab w Turcji.',
+    stat1: 'Kraftowe mięso', stat2: 'Oryginalna receptura',
+    orderTitle: 'Jak zjeść nasz kebab',
+    pickupTitle: 'Odbiór osobisty', pickupDesc: 'Zamów telefonicznie lub przy okienku i odbierz kebab prosto z rożna — bez czekania na dostawę.', pickupCta: 'Zobacz menu i zamów',
+    deliveryTitle: 'Dostawa', deliveryDesc: 'Zamów z dostawą prosto pod drzwi przez wybraną aplikację.',
+    locationTitle: 'Lokalizacja i godziny', locationDesc: 'Znajdziesz nas na Google Maps — sprawdź dokładny dojazd i opinie.', mapsLink: 'Otwórz w Google Maps',
+    hoursTitle: 'Godziny otwarcia', hoursDesc: 'Pon–Nd: sprawdź aktualne godziny na Google Maps',
+    columns: ['Kurczak', 'Mieszany', 'Wołowina'],
+    categories: ['W lawaszu', 'W bułce', 'Talerz', 'Box'],
+    rowNames: {
+      lawL: 'Kebab Lawasz L (130 g)', lawXL: 'Kebab Lawasz XL (160 g)', lawXXL: 'Kebab Lawasz XXL (200 g)',
+      bulL: 'Kebab w Bułce L (140 g)', bulXL: 'Kebab w Bułce XL (160 g)',
+      talXL: 'Talerz XL (160 g)', talXXL: 'Talerz XXL (200 g)',
+      box: 'Box Kebab (150 g)',
+    },
+    addonNames: ['Z serem', 'Z frytkami', 'Z jalapeño'],
+    drinkNames: ['Ayran', 'Ayran gazowany'],
+    cartTitle: 'Koszyk', cartEmpty: 'Twój koszyk jest pusty.',
+    checkoutTitle: 'Płatność', nameLabel: 'Imię i nazwisko', emailLabel: 'Email',
+    paymentLabel: 'Metoda płatności', payButton: 'Zapłać', checkoutCta: 'Przejdź do płatności',
+    subtotalLabel: 'Suma', backToCart: 'Wróć do koszyka',
+    thankYou: 'Dziękujemy! Zamówienie zostało opłacone.', newOrder: 'Nowe zamówienie',
+    paidAmountLabel: 'Kwota:', paidMethodLabel: 'Metoda płatności:',
+    paymentNames: ['BLIK', 'Karta', 'Gotówka przy odbiorze'],
+    privacyLink: 'Polityka prywatności', cookiesLink: 'Polityka cookies',
+    privacyText: 'Dane podane w formularzu zamówienia (imię, e-mail, telefon) wykorzystujemy wyłącznie do realizacji i potwierdzenia Twojego zamówienia oraz kontaktu w tej sprawie. Nie przekazujemy ich podmiotom trzecim poza dostawcami płatności i dostawy niezbędnymi do realizacji zamówienia. W każdej chwili możesz poprosić o wgląd, poprawienie lub usunięcie swoich danych, kontaktując się z nami telefonicznie lub mailowo.',
+    cookiesText: 'Nasza strona wykorzystuje niezbędne pliki cookies do prawidłowego działania koszyka i zapamiętania Twoich preferencji językowych. Nie używamy plików cookies do celów reklamowych ani nie przekazujemy ich zewnętrznym sieciom reklamowym. Korzystając ze strony, wyrażasz zgodę na ich użycie.',
+  },
+  en: {
+    tagline: '100% Craft Original Turkish Kebab',
+    navMenu: 'Menu', navAbout: 'About', navLocation: 'Location', navContact: 'Contact', navPromo: 'Promos', navOrder: 'Order online',
+    langButton: 'PL',
+    promoTitle: 'Our promos', promoSubtitle: 'Small perks that keep you coming back.',
+    contactTitle: 'Get in touch', contactSubtitle: 'Address, phone number and directions — all in one place.',
+    addressLabel: 'Address', phoneLabel: 'Phone',
+    heroTitleA: 'Kebab made', heroTitleB: 'the Turkish way.',
+    heroSub: 'Meat hand-cut in slabs, marinated on site and grilled slow on the spit. Fresh lavash, crisp bun, no shortcuts.',
+    heroMenuBtn: 'See menu',
+    menuTitle: 'What we serve', menuSubtitle: 'Click a price to add it to your cart.',
+    menuTeaserDesc: 'Chicken, mixed meat or beef — in lavash, bun, on a plate or in a box.',
+    menuTeaserCta: 'See full menu and order',
+    teaBonusTitle: 'Free tea!', teaBonusText: 'With Click & Collect or an order eaten on site — a hot tea is on us.',
+    friesPromoTitle: 'Free fries!', friesPromoText: 'Order two large kebabs (XL or XXL) and get a small fries on the house.',
+    setTitle: 'Combo', setDesc: 'Fries 200 g + drink',
+    addonsTitle: 'Extras', drinksTitle: 'Drinks', friesName: 'Fries',
+    aboutTitle: 'Craft, not mass production.',
+    aboutP1: 'Side Kebab is a small stand with a big respect for tradition. Meat is hand-cut in slabs, marinated on site and roasted on a vertical spit — no industrial "power cones" and no filler.',
+    aboutP2: 'Fresh lavash, house-made sauces, honest recipes — exactly how kebab is eaten in Turkey.',
+    stat1: 'Craft meat', stat2: 'Original recipe',
+    orderTitle: 'How to get our kebab',
+    pickupTitle: 'Click & Collect', pickupDesc: 'Order by phone or at the window and pick up your kebab straight off the spit — no delivery wait.', pickupCta: 'See menu and order',
+    deliveryTitle: 'Delivery', deliveryDesc: 'Order delivery straight to your door through your favourite app.',
+    locationTitle: 'Location & hours', locationDesc: 'Find us on Google Maps — check exact directions and reviews.', mapsLink: 'Open in Google Maps',
+    hoursTitle: 'Opening hours', hoursDesc: 'Mon–Sun: check current hours on Google Maps',
+    columns: ['Chicken', 'Mixed', 'Beef'],
+    categories: ['In lavash', 'In bun', 'Plate', 'Box'],
+    rowNames: {
+      lawL: 'Lavash Kebab L (130 g)', lawXL: 'Lavash Kebab XL (160 g)', lawXXL: 'Lavash Kebab XXL (200 g)',
+      bulL: 'Bun Kebab L (140 g)', bulXL: 'Bun Kebab XL (160 g)',
+      talXL: 'Plate XL (160 g)', talXXL: 'Plate XXL (200 g)',
+      box: 'Box Kebab (150 g)',
+    },
+    addonNames: ['With cheese', 'With fries', 'With jalapeño'],
+    drinkNames: ['Ayran', 'Sparkling ayran'],
+    cartTitle: 'Cart', cartEmpty: 'Your cart is empty.',
+    checkoutTitle: 'Payment', nameLabel: 'Full name', emailLabel: 'Email',
+    paymentLabel: 'Payment method', payButton: 'Pay', checkoutCta: 'Go to checkout',
+    subtotalLabel: 'Total', backToCart: 'Back to cart',
+    thankYou: 'Thank you! Your order has been paid.', newOrder: 'New order',
+    paidAmountLabel: 'Amount:', paidMethodLabel: 'Payment method:',
+    paymentNames: ['BLIK', 'Card', 'Cash on pickup'],
+    privacyLink: 'Privacy Policy', cookiesLink: 'Cookie Policy',
+    privacyText: 'Information you submit in the order form (name, email, phone) is used only to process and confirm your order and to contact you about it. We do not share it with third parties beyond the payment and delivery providers required to fulfil your order. You can request to view, correct or delete your data at any time by contacting us by phone or email.',
+    cookiesText: 'This site uses essential cookies to run the cart and remember your language preference. We do not use cookies for advertising or share them with ad networks. By using the site you agree to their use.',
+  },
+};
+
+const SALAD_PL = 'świeża sałatka (pomidor, cebula, sałata lodowa), słodki sos czosnkowy pieczony w piekarniku, ostry sos z papryką sambal';
+const SALAD_EN = 'fresh salad (tomato, onion, iceberg lettuce), oven-baked sweet garlic sauce, spicy sambal pepper sauce';
+const MENU_DATA = [
+  { key: 'combo', pl: 'Zestaw', en: 'Combo', items: [
+    { id: 'combo-beef-cheese', pl: 'Zestaw Wołowina z Serem + Frytki + Napój', en: 'Beef & Cheese Combo + Fries + Drink', descPl: `100% kraft wołowina z serem, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft beef with cheese, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 39.99 },
+    { id: 'combo-beef-jalapeno', pl: 'Zestaw Wołowina z Jalapeño + Frytki + Napój', en: 'Beef & Jalapeño Combo + Fries + Drink', descPl: `100% kraft wołowina z jalapeño, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft beef with jalapeño, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 39.99 },
+    { id: 'combo-lawasz-beef', pl: 'Zestaw Lawasz Wołowina + Frytki + Napój', en: 'Beef Lavash Combo + Fries + Drink', descPl: `100% kraft wołowina, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft beef, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 38.99 },
+    { id: 'combo-lawasz-chicken', pl: 'Zestaw Lawasz Kurczak + Frytki + Napój', en: 'Chicken Lavash Combo + Fries + Drink', descPl: `100% kraft kurczak, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft chicken, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 35.99 },
+    { id: 'combo-lawasz-chicken-cheese', pl: 'Zestaw Lawasz Kurczak z Serem + Frytki + Napój', en: 'Chicken & Cheese Lavash Combo + Fries + Drink', descPl: `100% kraft kurczak z serem, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft chicken with cheese, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 37.99 },
+    { id: 'combo-lawasz-chicken-jalapeno', pl: 'Zestaw Lawasz Kurczak z Jalapeño + Frytki + Napój', en: 'Chicken & Jalapeño Lavash Combo + Fries + Drink', descPl: `100% kraft kurczak z jalapeño, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft chicken with jalapeño, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 37.99 },
+    { id: 'combo-bulka', pl: 'Zestaw W Bułce + Frytki + Napój', en: 'Bun Combo + Fries + Drink', descPl: `100% kraft mięso, ${SALAD_PL}, frytki z przyprawami i napój do wyboru.`, descEn: `100% craft meat, ${SALAD_EN}, seasoned fries and a drink of choice.`, price: 36.99 },
+  ]},
+  { key: 'kebab', pl: 'Kebab', en: 'Kebab', items: [
+    { id: 'lawasz-beef', pl: 'Lawasz Wołowina', en: 'Beef Lavash', descPl: `100% kraft wołowina, ${SALAD_PL}.`, descEn: `100% craft beef, ${SALAD_EN}.`, price: 28.99 },
+    { id: 'lawasz-beef-cheese', pl: 'Lawasz Wołowina z Serem', en: 'Beef & Cheese Lavash', descPl: `100% kraft wołowina z serem, ${SALAD_PL}.`, descEn: `100% craft beef with cheese, ${SALAD_EN}.`, price: 29.99 },
+    { id: 'lawasz-beef-jalapeno', pl: 'Lawasz Wołowina z Jalapeño', en: 'Beef & Jalapeño Lavash', descPl: `100% kraft wołowina z jalapeño, ${SALAD_PL}.`, descEn: `100% craft beef with jalapeño, ${SALAD_EN}.`, price: 29.99 },
+    { id: 'lawasz-chicken', pl: 'Lawasz Kurczak', en: 'Chicken Lavash', descPl: `100% kraft kurczak, ${SALAD_PL}.`, descEn: `100% craft chicken, ${SALAD_EN}.`, price: 26.99 },
+    { id: 'lawasz-chicken-cheese', pl: 'Lawasz Kurczak z Serem', en: 'Chicken & Cheese Lavash', descPl: `100% kraft kurczak z serem, ${SALAD_PL}.`, descEn: `100% craft chicken with cheese, ${SALAD_EN}.`, price: 27.99 },
+    { id: 'lawasz-chicken-jalapeno', pl: 'Lawasz Kurczak z Jalapeño', en: 'Chicken & Jalapeño Lavash', descPl: `100% kraft kurczak z jalapeño, ${SALAD_PL}.`, descEn: `100% craft chicken with jalapeño, ${SALAD_EN}.`, price: 27.99 },
+    { id: 'bulka-kebab', pl: 'W Bułce Kebab', en: 'Bun Kebab', descPl: `100% kraft mięso, ${SALAD_PL}.`, descEn: `100% craft meat, ${SALAD_EN}.`, price: 26.99 },
+    { id: 'bulka-kebab-cheese', pl: 'W Bułce Kebab z Serem', en: 'Bun Kebab with Cheese', descPl: `100% kraft mięso z serem, ${SALAD_PL}.`, descEn: `100% craft meat with cheese, ${SALAD_EN}.`, price: 28.99 },
+    { id: 'bulka-kebab-jalapeno', pl: 'W Bułce Kebab z Jalapeño', en: 'Bun Kebab with Jalapeño', descPl: `100% kraft mięso z jalapeño, ${SALAD_PL}.`, descEn: `100% craft meat with jalapeño, ${SALAD_EN}.`, price: 28.99 },
+  ]},
+  { key: 'plate', pl: 'Talerz i Box', en: 'Plate & Box', items: [
+    { id: 'talerz-beef', pl: 'Talerz Wołowiny', en: 'Beef Plate', descPl: `100% kraft wołowina, ${SALAD_PL}, frytki i napój do wyboru.`, descEn: `100% craft beef, ${SALAD_EN}, fries and a drink of choice.`, price: 29.99 },
+    { id: 'talerz-chicken', pl: 'Talerz Kurczak', en: 'Chicken Plate', descPl: `100% kraft kurczak, ${SALAD_PL}, frytki i napój do wyboru.`, descEn: `100% craft chicken, ${SALAD_EN}, fries and a drink of choice.`, price: 27.99 },
+    { id: 'talerz-mixed', pl: 'Talerz Mieszany', en: 'Mixed Plate', descPl: `100% kraft mieszane mięso, ${SALAD_PL}, frytki i napój do wyboru.`, descEn: `100% craft mixed meat, ${SALAD_EN}, fries and a drink of choice.`, price: 28.99 },
+    { id: 'box-beef', pl: 'Box Wołowina 150g', en: 'Beef Box 150g', descPl: `100% kraft wołowina, ${SALAD_PL}, frytki i napój do wyboru.`, descEn: `100% craft beef, ${SALAD_EN}, fries and a drink of choice.`, price: 28.99 },
+  ]},
+  { key: 'fries', pl: 'Extra Frytki', en: 'Extra Fries', items: [
+    { id: 'fries-small', pl: 'Frytki małe', en: 'Small Fries', descPl: 'Chrupiące frytki z przyprawami.', descEn: 'Crispy seasoned fries.', price: 9 },
+    { id: 'fries-large', pl: 'Frytki duże', en: 'Large Fries', descPl: 'Chrupiące frytki z przyprawami, większa porcja.', descEn: 'Crispy seasoned fries, bigger portion.', price: 12 },
+  ]},
+  { key: 'drinks', pl: 'Napój', en: 'Drink', items: [
+    { id: 'ayran', pl: 'Ayran', en: 'Ayran', descPl: 'Tradycyjny turecki napój jogurtowy.', descEn: 'Traditional Turkish yogurt drink.', price: 7 },
+    { id: 'ayran-sparkling', pl: 'Ayran gazowany', en: 'Sparkling Ayran', descPl: 'Musujący napój jogurtowy.', descEn: 'Sparkling yogurt drink.', price: 8 },
+    { id: 'cola', pl: 'Coca-Cola 0,33 l', en: 'Coca-Cola 0.33 l', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 7 },
+    { id: 'cola-zero', pl: 'Coca-Cola Zero 0,33 l', en: 'Coca-Cola Zero 0.33 l', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 7 },
+    { id: 'fanta', pl: 'Fanta 0,33 l', en: 'Fanta 0.33 l', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 7 },
+    { id: 'sprite', pl: 'Sprite 0,33 l', en: 'Sprite 0.33 l', descPl: 'Puszka 330 ml.', descEn: '330 ml can.', price: 7 },
+    { id: 'water', pl: 'Woda niegazowana 0,5 l', en: 'Still Water 0.5 l', descPl: 'Butelka 500 ml.', descEn: '500 ml bottle.', price: 5 },
+  ]},
+];
+
+class Component extends DCLogic {
+  state = {
+    lang: 'pl', page: 'menu', langMenuOpen: false,
+    cart: [], cartOpen: false, checkoutOpen: false, paid: false, lastOrderTotal: 0, lastPaymentLabel: '',
+    form: { name: '', email: '', phone: '' }, payment: 0,
+  };
+
+  addToCart(item) {
+    this.setState(s => {
+      const cart = [...s.cart];
+      const idx = cart.findIndex(c => c.id === item.id);
+      if (idx >= 0) cart[idx] = { ...cart[idx], qty: cart[idx].qty + 1 };
+      else cart.push({ ...item, qty: 1 });
+      return { cart, cartOpen: true, paid: false };
+    });
+  }
+  changeQty(id, delta) {
+    this.setState(s => ({ cart: s.cart.map(c => c.id === id ? { ...c, qty: c.qty + delta } : c).filter(c => c.qty > 0) }));
+  }
+  removeFromCart(id) {
+    this.setState(s => ({ cart: s.cart.filter(c => c.id !== id) }));
+  }
+
+  renderVals() {
+    const t = CONTENT[this.state.lang] || CONTENT.pl;
+    const LANGS = [
+      { code: 'pl', flagCc: 'pl', label: 'Polski' },
+      { code: 'en', flagCc: 'gb', label: 'English' },
+      { code: 'es', flagCc: 'es', label: 'Español' },
+      { code: 'tr', flagCc: 'tr', label: 'Türkçe' },
+    ];
+    const current = LANGS.find(l => l.code === this.state.lang) || LANGS[0];
+    const langOptions = LANGS.map(l => ({ ...l, choose: () => this.setState({ lang: l.code, langMenuOpen: false }) }));
+    const isPl = this.state.lang !== 'en';
+    const menuCategories = MENU_DATA.map(cat => ({
+      title: isPl ? cat.pl : cat.en,
+      items: cat.items.map(it => {
+        const name = isPl ? it.pl : it.en;
+        const desc = isPl ? it.descPl : it.descEn;
+        return { id: it.id, imgId: 'menu-' + it.id, name, desc, price: it.price, add: () => this.addToCart({ id: it.id, name, price: it.price }) };
+      }),
+    }));
+
+    const cartCount = this.state.cart.reduce((sum, c) => sum + c.qty, 0);
+    const subtotalNum = this.state.cart.reduce((sum, c) => sum + c.price * c.qty, 0);
+    const subtotal = subtotalNum.toFixed(2);
+    const cartRows = this.state.cart.map(c => ({
+      ...c,
+      lineTotal: (c.price * c.qty).toFixed(2),
+      inc: () => this.changeQty(c.id, 1),
+      dec: () => this.changeQty(c.id, -1),
+      remove: () => this.removeFromCart(c.id),
+    }));
+
+    const paymentOptions = t.paymentNames.map((label, i) => ({
+      label,
+      choose: () => this.setState({ payment: i }),
+      borderColor: this.state.payment === i ? '#1c6b3f' : 'rgba(32,29,25,0.2)',
+      bg: this.state.payment === i ? '#eef4ef' : '#faf1e4',
+      color: '#201d19',
+    }));
+
+    const canPay = !!(this.state.form.name.trim() && this.state.form.email.trim() && this.state.form.phone.trim() && this.state.cart.length > 0);
+
+    return {
+      t, menuCategories,
+      isHome: this.state.page === 'home', isMenu: this.state.page === 'menu', isContact: this.state.page === 'contact',
+      isPrivacy: this.state.page === 'privacy', isCookies: this.state.page === 'cookies', isPromo: this.state.page === 'promo',
+      currentLangFlag: current.flagCc, currentLangLabel: current.label,
+      langMenuOpen: this.state.langMenuOpen, langOptions,
+      toggleLangMenu: () => this.setState(s => ({ langMenuOpen: !s.langMenuOpen })),
+      goHome: () => this.setState({ page: 'home' }),
+      goMenu: () => this.setState({ page: 'menu' }),
+      goContact: () => this.setState({ page: 'contact' }),
+      goPromo: () => this.setState({ page: 'promo' }),
+      goPrivacy: () => this.setState({ page: 'privacy' }),
+      goCookies: () => this.setState({ page: 'cookies' }),
+
+      cartOpen: this.state.cartOpen,
+      cartTransform: this.state.cartOpen ? 'translateX(0)' : 'translateX(100%)',
+      toggleCart: () => this.setState(s => ({ cartOpen: !s.cartOpen })),
+      hasCartItems: cartCount > 0,
+      cartCount,
+      cartHeaderTitle: this.state.paid ? t.thankYou.split('!')[0] + '!' : t.cartTitle,
+
+      checkoutOpen: this.state.checkoutOpen,
+      showPaidView: this.state.paid,
+      showEmptyView: !this.state.paid && !this.state.checkoutOpen && this.state.cart.length === 0,
+      showCartListView: !this.state.paid && !this.state.checkoutOpen && this.state.cart.length > 0,
+      showFooterActions: !this.state.paid,
+      showSubtotalBar: !this.state.checkoutOpen && this.state.cart.length > 0,
+      showCheckoutButton: !this.state.checkoutOpen && this.state.cart.length > 0,
+
+      cartRows, subtotal,
+      form: this.state.form,
+      setName: (e) => this.setState(s => ({ form: { ...s.form, name: e.target.value } })),
+      setEmail: (e) => this.setState(s => ({ form: { ...s.form, email: e.target.value } })),
+      setPhone: (e) => this.setState(s => ({ form: { ...s.form, phone: e.target.value } })),
+      paymentOptions,
+      openCheckout: () => this.setState({ checkoutOpen: true }),
+      backToCart: () => this.setState({ checkoutOpen: false }),
+      payDisabled: !canPay,
+      payButtonBg: canPay ? '#c1362b' : 'rgba(32,29,25,0.25)',
+      paymentLabel: t.paymentNames[this.state.payment],
+      lastOrderTotal: this.state.lastOrderTotal,
+      lastPaymentLabel: this.state.lastPaymentLabel,
+      pay: () => {
+        if (!canPay) return;
+        this.setState({ paid: true, cart: [], checkoutOpen: false, lastOrderTotal: subtotal, lastPaymentLabel: t.paymentNames[this.state.payment] });
+      },
+      newOrder: () => this.setState({ paid: false, cartOpen: false, form: { name: '', email: '', phone: '' } }),
+    };
+  }
+}
+
+</script>
+
+
+</body></html>
