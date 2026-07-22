@@ -432,7 +432,7 @@
       </div>
     </div>
     <nav style="display:flex; align-items:center; gap:22px; font-size:15px; font-weight:600;">
-      <a href="#" sc-camel-on-click="{{ goMenu }}" style="color:#201d19;">{{ t.navMenu }}</a>
+      <a href="#" sc-camel-on-click="{{ goMenu }}" class="nav-secondary" style="color:#201d19;">{{ t.navMenu }}</a>
       <a href="#o-nas" sc-camel-on-click="{{ goHomeAbout }}" class="nav-secondary" style="color:#201d19;">{{ t.navAbout }}</a>
       <a href="#lokalizacja" sc-camel-on-click="{{ goHomeLocation }}" class="nav-secondary" style="color:#201d19;">{{ t.navLocation }}</a>
       <a href="#" sc-camel-on-click="{{ goContact }}" class="nav-secondary" style="color:#201d19;">{{ t.navContact }}</a>
@@ -445,6 +445,7 @@
         </button>
         <sc-if value="{{ mobileMenuOpen }}">
           <div style="position:absolute; top:calc(100% + 8px); left:0; background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,0.14); padding:6px; display:flex; flex-direction:column; min-width:180px; z-index:60; font-size:15px;">
+            <a href="#" sc-camel-on-click="{{ goMenu }}" style="padding:10px 12px; border-radius:8px; color:#201d19;">{{ t.navMenu }}</a>
             <a href="#" sc-camel-on-click="{{ goHomeAbout }}" style="padding:10px 12px; border-radius:8px; color:#201d19;">{{ t.navAbout }}</a>
             <a href="#" sc-camel-on-click="{{ goHomeLocation }}" style="padding:10px 12px; border-radius:8px; color:#201d19;">{{ t.navLocation }}</a>
             <a href="#" sc-camel-on-click="{{ goContact }}" style="padding:10px 12px; border-radius:8px; color:#201d19;">{{ t.navContact }}</a>
