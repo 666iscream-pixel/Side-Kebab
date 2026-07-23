@@ -417,6 +417,13 @@
       header { padding-left: 16px !important; padding-right: 16px !important; }
       header > div > div { display: none; }
     }
+    @media (max-width: 800px) {
+      .resp-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .resp-grid-3 { grid-template-columns: 1fr !important; }
+      .resp-section { padding-left: 24px !important; padding-right: 24px !important; padding-top: 56px !important; padding-bottom: 56px !important; }
+      .resp-map { min-height: 260px !important; }
+      .resp-map iframe { min-height: 260px !important; }
+    }
   </style>
 </helmet>
 
@@ -434,7 +441,6 @@
     <nav style="display:flex; align-items:center; gap:22px; font-size:15px; font-weight:600;">
       <a href="#" sc-camel-on-click="{{ goMenu }}" class="nav-secondary" style="color:#201d19;">{{ t.navMenu }}</a>
       <a href="#o-nas" sc-camel-on-click="{{ goHomeAbout }}" class="nav-secondary" style="color:#201d19;">{{ t.navAbout }}</a>
-      <a href="#lokalizacja" sc-camel-on-click="{{ goHomeLocation }}" class="nav-secondary" style="color:#201d19;">{{ t.navLocation }}</a>
       <a href="#" sc-camel-on-click="{{ goContact }}" class="nav-secondary" style="color:#201d19;">{{ t.navContact }}</a>
       <a href="#" sc-camel-on-click="{{ goPromo }}" class="nav-secondary" style="color:#c1362b;">{{ t.navPromo }}</a>
       <div style="position:relative;">
@@ -447,7 +453,6 @@
           <div style="position:absolute; top:calc(100% + 8px); left:0; background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,0.14); padding:6px; display:flex; flex-direction:column; min-width:180px; z-index:60; font-size:15px;">
             <a href="#" sc-camel-on-click="{{ goMenu }}" style="padding:10px 12px; border-radius:8px; color:#201d19;">{{ t.navMenu }}</a>
             <a href="#" sc-camel-on-click="{{ goHomeAbout }}" style="padding:10px 12px; border-radius:8px; color:#201d19;">{{ t.navAbout }}</a>
-            <a href="#" sc-camel-on-click="{{ goHomeLocation }}" style="padding:10px 12px; border-radius:8px; color:#201d19;">{{ t.navLocation }}</a>
             <a href="#" sc-camel-on-click="{{ goContact }}" style="padding:10px 12px; border-radius:8px; color:#201d19;">{{ t.navContact }}</a>
             <a href="#" sc-camel-on-click="{{ goPromo }}" style="padding:10px 12px; border-radius:8px; color:#c1362b;">{{ t.navPromo }}</a>
           </div>
@@ -505,7 +510,7 @@
   </section>
 
   <!-- FEATURE STRIP -->
-  <section style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(32,29,25,0.1); border-bottom:1px solid rgba(32,29,25,0.1);">
+  <section class="resp-grid-3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(32,29,25,0.1); border-bottom:1px solid rgba(32,29,25,0.1);">
     <sc-for list="{{ features }}" as="f" hint-placeholder-count="3">
       <div style="background:#faf5ec; padding:36px 32px; display:flex; flex-direction:column; gap:8px;">
         <div style="font-family:'Bitter',serif; font-weight:800; font-size:17px; color:#1c6b3f;">{{ f.title }}</div>
@@ -523,14 +528,14 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="o-nas" style="background:#1a1815; color:#faf5ec; padding:96px 48px;">
-    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+  <section id="o-nas" class="resp-section" style="background:#1a1815; color:#faf5ec; padding:96px 48px;">
+    <div class="resp-grid" style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
       <div>
         <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#e8a99f; margin-bottom:10px;">{{ t.navAbout }}</div>
         <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(28px,3.5vw,40px); margin:0 0 20px; line-height:1.1;">{{ t.aboutTitle }}</h2>
         <p style="font-size:17px; line-height:1.7; color:rgba(250,245,236,0.8); margin:0 0 16px;">{{ t.aboutP1 }}</p>
         <p style="font-size:17px; line-height:1.7; color:rgba(250,245,236,0.8); margin:0;">{{ t.aboutP2 }}</p>
-        <div style="display:flex; gap:32px; margin-top:32px;">
+        <div style="display:flex; gap:32px; margin-top:32px; flex-wrap:wrap;">
           <div>
             <div style="font-family:'Bitter',serif; font-weight:800; font-size:28px; color:#e8a99f;">100%</div>
             <div style="font-size:14px; color:rgba(250,245,236,0.65);">{{ t.stat1 }}</div>
@@ -540,8 +545,15 @@
             <div style="font-size:14px; color:rgba(250,245,236,0.65);">{{ t.stat2 }}</div>
           </div>
         </div>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:28px; padding-top:24px; border-top:1px solid rgba(250,245,236,0.15);">
+          <div>
+            <div style="font-weight:700; font-size:15px;">Warszawa</div>
+            <div style="font-size:14px; color:rgba(250,245,236,0.6);">{{ t.hoursDesc }}</div>
+          </div>
+          <a href="https://share.google/GfVbZ5JAfW7DhqkG3" target="_blank" style="font-weight:700; font-size:14px; color:#e8a99f; white-space:nowrap;">{{ t.mapsLink }} →</a>
+        </div>
       </div>
-      <div style="border-radius:20px; background:#161412; border:1px solid rgba(250,245,236,0.15); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+      <div class="resp-photo" style="border-radius:20px; background:#161412; border:1px solid rgba(250,245,236,0.15); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; max-width:400px; margin:0 auto; width:100%;">
         <div style="position:absolute; top:-60px; left:-60px; width:220px; height:220px; border-radius:50%; background:#1c6b3f; opacity:0.4; filter:blur(4px);"></div>
         <div style="position:absolute; bottom:-70px; right:-50px; width:200px; height:200px; border-radius:50%; background:#c1362b; opacity:0.3; filter:blur(4px);"></div>
         <div style="position:relative; z-index:1; width:170px; height:170px; border-radius:50%; background:#faf5ec; display:flex; align-items:center; justify-content:center;">
@@ -552,12 +564,12 @@
   </section>
 
   <!-- ORDER: CLICK&COLLECT / DELIVERY -->
-  <section id="zamow" style="padding:96px 48px; max-width:1100px; margin:0 auto;">
+  <section id="zamow" class="resp-section" style="padding:96px 48px; max-width:1100px; margin:0 auto;">
     <div style="text-align:center; margin-bottom:56px;">
       <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c1362b; margin-bottom:10px;">{{ t.navOrder }}</div>
       <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(32px,4vw,48px); margin:0;">{{ t.orderTitle }}</h2>
     </div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+    <div class="resp-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
       <div style="background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:20px; padding:40px; display:flex; flex-direction:column; gap:18px;">
         <div style="width:48px; height:48px; border-radius:12px; background:rgba(28,107,63,0.12); display:flex; align-items:center; justify-content:center;">
           <div style="position:relative; width:26px; height:20px;">
@@ -594,22 +606,6 @@
     </div>
   </section>
 
-  <!-- LOCATION -->
-  <section id="lokalizacja" style="padding:0 48px 96px; max-width:1100px; margin:0 auto;">
-    <div style="background:#faf1e4; border-radius:20px; padding:48px; display:grid; grid-template-columns:1fr 1fr; gap:48px;">
-      <div>
-        <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c1362b; margin-bottom:10px;">{{ t.navLocation }}</div>
-        <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(26px,3vw,34px); margin:0 0 20px;">{{ t.locationTitle }}</h2>
-        <div style="font-weight:700; font-size:16px; margin-bottom:4px;">Warszawa</div>
-        <div style="font-size:15px; color:rgba(32,29,25,0.65); line-height:1.5; margin-bottom:8px;">{{ t.locationDesc }}</div>
-        <a href="https://share.google/GfVbZ5JAfW7DhqkG3" target="_blank" style="font-weight:700; font-size:15px;">{{ t.mapsLink }} →</a>
-      </div>
-      <div>
-        <div style="font-weight:700; font-size:16px; margin-bottom:4px;">{{ t.hoursTitle }}</div>
-        <div style="font-size:15px; color:rgba(32,29,25,0.65); line-height:1.7;">{{ t.hoursDesc }}</div>
-      </div>
-    </div>
-  </section>
   </sc-if>
 
   <sc-if value="{{ isMenu }}">
@@ -680,13 +676,13 @@
 
   <sc-if value="{{ isPromo }}">
   <!-- PROMO PAGE -->
-  <section style="padding:64px 48px 96px; max-width:900px; margin:0 auto;">
+  <section class="resp-section" style="padding:64px 48px 96px; max-width:900px; margin:0 auto;">
     <div style="text-align:center; margin-bottom:48px;">
       <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c1362b; margin-bottom:10px;">{{ t.navPromo }}</div>
       <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(32px,4vw,48px); margin:0 0 12px;">{{ t.promoTitle }}</h2>
       <p style="font-size:17px; color:rgba(32,29,25,0.65); max-width:520px; margin:0 auto;">{{ t.promoSubtitle }}</p>
     </div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+    <div class="resp-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
       <div style="background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:20px; padding:36px; display:flex; flex-direction:column; gap:16px;">
         <div style="width:56px; height:56px; border-radius:14px; background:#faf1e4; display:flex; align-items:center; justify-content:center;">
           <div style="width:16px; height:20px; background:#f4f0e6; border:2px solid #cfd8d3; border-radius:2px 2px 6px 6px; position:relative;">
@@ -716,13 +712,13 @@
 
   <sc-if value="{{ isContact }}">
   <!-- CONTACT PAGE -->
-  <section style="padding:64px 48px 96px; max-width:1100px; margin:0 auto;">
+  <section class="resp-section" style="padding:64px 48px 96px; max-width:1100px; margin:0 auto;">
     <div style="text-align:center; margin-bottom:48px;">
       <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c1362b; margin-bottom:10px;">{{ t.navContact }}</div>
       <h2 style="font-family:'Bitter',serif; font-weight:800; font-size:clamp(32px,4vw,48px); margin:0 0 12px;">{{ t.contactTitle }}</h2>
       <p style="font-size:17px; color:rgba(32,29,25,0.65); max-width:520px; margin:0 auto;">{{ t.contactSubtitle }}</p>
     </div>
-    <div style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:40px; align-items:start;">
+    <div class="resp-grid" style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:40px; align-items:start;">
       <div style="display:flex; flex-direction:column; gap:24px;">
         <div style="background:#fff; border:1px solid rgba(32,29,25,0.12); border-radius:16px; padding:28px;">
           <div style="font-weight:700; font-size:15px; text-transform:uppercase; letter-spacing:0.5px; color:#1c6b3f; margin-bottom:8px;">{{ t.addressLabel }}</div>
@@ -739,7 +735,7 @@
           <div style="font-size:15px; color:rgba(32,29,25,0.65); line-height:1.7;">{{ t.hoursDesc }}</div>
         </div>
       </div>
-      <div style="border-radius:16px; overflow:hidden; border:1px solid rgba(32,29,25,0.12); min-height:420px; position:relative;">
+      <div class="resp-map" style="border-radius:16px; overflow:hidden; border:1px solid rgba(32,29,25,0.12); min-height:420px; position:relative;">
         <iframe title="map" src="https://maps.google.com/maps?q=Side+Kebab+Warszawa&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="100%" style="border:0; min-height:420px; display:block; position:absolute; inset:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
@@ -759,7 +755,6 @@
       <nav style="display:flex; align-items:center; gap:20px; font-size:14px; font-weight:600; flex-wrap:wrap;">
         <a href="#" sc-camel-on-click="{{ goMenu }}" style="color:#201d19;">{{ t.navMenu }}</a>
         <a href="#o-nas" sc-camel-on-click="{{ goHomeAbout }}" style="color:#201d19;">{{ t.navAbout }}</a>
-        <a href="#lokalizacja" sc-camel-on-click="{{ goHomeLocation }}" style="color:#201d19;">{{ t.navLocation }}</a>
         <a href="#" sc-camel-on-click="{{ goContact }}" style="color:#201d19;">{{ t.navContact }}</a>
       </nav>
     </div>
@@ -1125,10 +1120,6 @@ class Component extends DCLogic {
       goHome: () => this.setState({ page: 'home', mobileMenuOpen: false }),
       goHomeAbout: () => this.setState({ page: 'home', mobileMenuOpen: false }, () => {
         const el = document.getElementById('o-nas');
-        if (el) el.scrollIntoView({ block: 'start' });
-      }),
-      goHomeLocation: () => this.setState({ page: 'home', mobileMenuOpen: false }, () => {
-        const el = document.getElementById('lokalizacja');
         if (el) el.scrollIntoView({ block: 'start' });
       }),
       goMenu: () => this.setState({ page: 'menu', mobileMenuOpen: false }),
